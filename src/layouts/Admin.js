@@ -96,7 +96,7 @@ export default function Dashboard(props) {
     <ChakraProvider theme={theme} resetCss={false}>
       <Sidebar
         routes={routes}
-        logoText={"College Portal"}
+        logoText={"Class Advisor Portal"}
         display="none"
         sidebarVariant={sidebarVariant}
         {...rest}
