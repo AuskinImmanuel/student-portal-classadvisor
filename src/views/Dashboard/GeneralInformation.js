@@ -28,7 +28,7 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import TablesTableRow from "components/Tables/TablesTableRow";
 import { tablesTableData1 } from "variables/general";
-import Selection from "components/Select/Selection";
+import Upload from "components/Upload/Upload";
 
 function GeneralInformation() {
   const [data, setData] = useState([]);
@@ -38,7 +38,6 @@ function GeneralInformation() {
     });
     console.log(data);
   });
-  const { isOpen, onToggle } = useDisclosure();
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
@@ -49,77 +48,47 @@ function GeneralInformation() {
             <Text fontSize="xl" color={textColor} fontWeight="bold" mr="auto">
               General Information
             </Text>
-            <Selection />
-            <Flex direction="column" align="flex-end" w="100%">
-              <Button
-                onClick={onToggle}
-                marginTop="3rem"
-                marginBottom="1rem"
-                marginRight="1rem"
-                colorScheme="orange"
-                variant="solid"
-              >
-                View
-              </Button>
-            </Flex>
           </Flex>
         </CardBody>
-        <SimpleGrid columns={{ sm: 1, md: 2, xl: 2 }} gap={5}>
-          <Card>
-            <CardBody>
-              <Button colorScheme="orange" variant="solid" width="100%">
-                Edit
-              </Button>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <Button colorScheme="orange" variant="solid" width="100%">
-                Delete
-              </Button>
-            </CardBody>
-          </Card>
-        </SimpleGrid>
+        <Upload />
       </Card>
 
-      <Collapse in={isOpen} animateOpacity>
-        <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
-          <CardHeader p="6px 0px 22px 0px">
-            <Text fontSize="xl" color={textColor} fontWeight="bold">
-              Students List
-            </Text>
-          </CardHeader>
-          <CardBody>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">S.No.</Th>
-                  <Th pl="0px" color="gray.400">
-                    Name
-                  </Th>
-                  <Th color="gray.400">Resitration Number</Th>
-                  <Th color="gray.400">Roll Number</Th>
-                  <Th color="gray.400">Email</Th>
-                  <Th></Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {data.map((item) => {
-                  return (
-                    <TablesTableRow
-                      sno={item.sno}
-                      name={item.name}
-                      reg={item.reg}
-                      email={item.email}
-                      roll={item.roll}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
-        </Card>
-      </Collapse>
+      <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+        <CardHeader p="6px 0px 22px 0px">
+          <Text fontSize="xl" color={textColor} fontWeight="bold">
+            Students List
+          </Text>
+        </CardHeader>
+        <CardBody>
+          <Table variant="simple" color={textColor}>
+            <Thead>
+              <Tr my=".8rem" pl="0px" color="gray.400">
+                <Th color="gray.400">S.No.</Th>
+                <Th pl="0px" color="gray.400">
+                  Name
+                </Th>
+                <Th color="gray.400">Resitration Number</Th>
+                <Th color="gray.400">Roll Number</Th>
+                <Th color="gray.400">Email</Th>
+                <Th></Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {data.map((item) => {
+                return (
+                  <TablesTableRow
+                    sno={item.sno}
+                    name={item.name}
+                    reg={item.reg}
+                    email={item.email}
+                    roll={item.roll}
+                  />
+                );
+              })}
+            </Tbody>
+          </Table>
+        </CardBody>
+      </Card>
     </Flex>
   );
 }

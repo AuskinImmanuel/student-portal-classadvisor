@@ -29,6 +29,7 @@ import CardBody from "components/Card/CardBody.js";
 import TablesTableRow from "components/Tables/TablesTableRow";
 import { tablesTableData2 } from "variables/general";
 import Selection from "components/Select/Selection";
+import Upload from "components/Upload/Upload";
 
 function Academics() {
   const [data, setData] = useState([]);
@@ -51,36 +52,9 @@ function Academics() {
             <Text fontSize="xl" color={textColor} fontWeight="bold" mr="auto">
               Academic Results
             </Text>
-            <Selection />
-            <Flex direction="column" align="flex-end" w="100%">
-              <Button
-                marginTop="3rem"
-                marginBottom="1rem"
-                marginRight="1rem"
-                colorScheme="orange"
-                variant="solid"
-              >
-                View
-              </Button>
-            </Flex>
           </Flex>
         </CardBody>
-        <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} gap={5}>
-          <Card>
-            <CardBody>
-              <Button colorScheme="orange" variant="solid" width="100%">
-                Edit
-              </Button>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <Button colorScheme="orange" variant="solid" width="100%">
-                Delete
-              </Button>
-            </CardBody>
-          </Card>
-        </SimpleGrid>
+        <Upload />
       </Card>
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
         <CardHeader p="6px 0px 22px 0px">

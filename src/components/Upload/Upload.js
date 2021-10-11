@@ -19,9 +19,19 @@ function Upload() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Flex direction="column" pt={{ base: "120px", md: "75px" }}>
-      <Card>
-        <CardBody>
+    <Flex direction="column" pt={{ base: "1rem", md: ".5rem" }}>
+      <SimpleGrid columns={{ sm: 1, md: 2, xl: 2 }} gap={5}>
+        <Card>
+          <Button
+            onClick={onToggle}
+            colorScheme="orange"
+            variant="solid"
+            width="100%"
+          >
+            Download
+          </Button>
+        </Card>
+        <Card>
           <Button
             onClick={onToggle}
             colorScheme="orange"
@@ -30,8 +40,8 @@ function Upload() {
           >
             Upload
           </Button>
-        </CardBody>
-      </Card>
+        </Card>
+      </SimpleGrid>
       <Collapse in={isOpen} animateOpacity>
         <Box
           p="40px"
