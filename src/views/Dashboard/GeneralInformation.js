@@ -54,8 +54,16 @@ function GeneralInformation() {
         <Card>
           <CardHeader>Searh Student</CardHeader>
           <SearchBar />
+          <br />
+          <Button
+            colorScheme="orange"
+            alignSelf="flex-end"
+            variant="solid"
+            width="25%"
+          >
+            Download
+          </Button>
         </Card>
-        <Upload />
       </Card>
 
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>

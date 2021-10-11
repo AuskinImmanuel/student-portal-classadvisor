@@ -22,6 +22,7 @@ import CardBody from "components/Card/CardBody.js";
 import TablesTableRow from "components/Tables/TablesTableRow";
 import { tablesTableData4 } from "variables/general";
 import Selection from "components/Select/Selection";
+import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
 
 function InternationalExposure() {
   const textColor = useColorModeValue("gray.700", "white");
@@ -34,18 +35,19 @@ function InternationalExposure() {
             <Text fontSize="xl" color={textColor} fontWeight="bold" mr="auto">
               International Exposure
             </Text>
-            <Selection />
-            <Flex direction="column" align="flex-end" w="100%">
+            <Card>
+              <CardHeader>Searh Student</CardHeader>
+              <SearchBar />
+              <br />
               <Button
-                marginTop="3rem"
-                marginBottom="1rem"
-                marginRight="1rem"
                 colorScheme="orange"
+                alignSelf="flex-end"
                 variant="solid"
+                width="25%"
               >
-                View
+                Download
               </Button>
-            </Flex>
+            </Card>
           </Flex>
         </CardBody>
       </Card>
