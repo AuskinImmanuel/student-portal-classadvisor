@@ -43,7 +43,7 @@ function Upload() {
         </Card>
       </SimpleGrid>
       <Collapse in={isOpen} animateOpacity>
-        <Box
+        <Card
           p="40px"
           color="white"
           mt="4"
@@ -51,8 +51,9 @@ function Upload() {
           rounded="md"
           shadow="md"
         >
-          <Input type="file" />
-        </Box>
+          <Input width="50%" type="file" />
+          <Button width="fit-content">Upload</Button>
+        </Card>
       </Collapse>
     </Flex>
   );

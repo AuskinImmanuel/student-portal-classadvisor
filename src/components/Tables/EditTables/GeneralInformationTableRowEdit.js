@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-function GeneralParticularstablerowedit(props) {
+function GeneralParticularsTableRowEdit(props) {
   const { field, data } = props;
   const textColor = useColorModeValue("gray.700", "white");
   const bgStatus = useColorModeValue("gray.400", "#1a202c");
@@ -52,4 +52,4 @@ function GeneralParticularstablerowedit(props) {
   );
 }
 
-export default GeneralParticularstablerowedit;
+export default GeneralParticularsTableRowEdit;

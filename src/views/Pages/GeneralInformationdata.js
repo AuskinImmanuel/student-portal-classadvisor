@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 // Chakra imports
 import {
   Flex,
@@ -36,8 +37,15 @@ import { Goals } from "variables/general";
 import { ProfessionalMembership } from "variables/general";
 import GeneralParticularstablerowedit from "components/Tables/EditTables/GeneralInformationTableRowEdit";
 
-function GeneralInformationdata() {
+function GeneralInformationdata({ location }) {
   const textColor = useColorModeValue("gray.700", "white");
+  const history = useHistory();
+
+  const handleRoute = () => {
+    history.push("/GeneralParticularsTableRowEdit", {
+      from: GeneralInformationdata,
+    });
+  };
   var GData = GeneralParticularstablerow;
 
   return (
@@ -234,7 +242,7 @@ function GeneralInformationdata() {
         <Card>
           <CardBody>
             <Button
-              onClick={(GData = GeneralParticularstablerowedit)}
+              onClick={"/GeneralParticularstablerowedit"}
               colorScheme="orange"
               variant="solid"
               width="100%"
