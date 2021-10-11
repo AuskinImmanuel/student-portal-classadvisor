@@ -221,6 +221,13 @@ var dashRoutes = [
         component: Feedbackdata,
         layout: "/admin",
       },
+    ],
+  },
+  {
+    name: "TEST EDIT PAGES",
+    category: "account",
+    state: "pageCollapse",
+    views: [
       {
         path: "/GeneralInformationDataEdit",
         name: (

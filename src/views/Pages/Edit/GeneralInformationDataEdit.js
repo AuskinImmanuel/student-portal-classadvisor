@@ -34,6 +34,7 @@ import { NonTechnicalSkills } from "variables/general";
 import { Goals } from "variables/general";
 import { ProfessionalMembership } from "variables/general";
 import GeneralParticularsTableRowEdit from "components/Tables/EditTables/GeneralInformationTableRowEdit";
+import GeneralParticularstablerow from "components/Tables/GeneralParticularstablerow";
 
 function GeneralInformationDataEdit() {
   const textColor = useColorModeValue("gray.700", "white");
@@ -403,6 +404,27 @@ function GeneralInformationDataEdit() {
             </Flex>
           </Card>
         </SimpleGrid>
+      </SimpleGrid>
+      <SimpleGrid pt="1.5rem" columns={{ sm: 1, md: 2, xl: 2 }} gap={5}>
+        <Card>
+          <CardBody>
+            <Button
+              onClick={GeneralParticularstablerow}
+              colorScheme="orange"
+              variant="solid"
+              width="100%"
+            >
+              Save
+            </Button>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardBody>
+            <Button colorScheme="orange" variant="solid" width="100%">
+              Delete
+            </Button>
+          </CardBody>
+        </Card>
       </SimpleGrid>
     </Flex>
   );

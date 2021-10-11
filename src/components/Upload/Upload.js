@@ -52,7 +52,9 @@ function Upload() {
           shadow="md"
         >
           <Input width="50%" type="file" />
-          <Button width="fit-content">Upload</Button>
+          <Button ms="4" marginTop="2" bg="gray.700" width="fit-content">
+            Upload
+          </Button>
         </Card>
       </Collapse>
     </Flex>
