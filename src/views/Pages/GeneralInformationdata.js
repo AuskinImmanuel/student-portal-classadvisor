@@ -34,9 +34,11 @@ import { TechnicalSkills } from "variables/general";
 import { NonTechnicalSkills } from "variables/general";
 import { Goals } from "variables/general";
 import { ProfessionalMembership } from "variables/general";
+import GeneralParticularstablerowedit from "components/Tables/EditTables/GeneralInformationTableRowEdit";
 
 function GeneralInformationdata() {
   const textColor = useColorModeValue("gray.700", "white");
+  var GData = GeneralParticularstablerow;
 
   return (
     <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
@@ -51,12 +53,7 @@ function GeneralInformationdata() {
             <Table variant="simple" color={textColor}>
               <Tbody>
                 {GeneralParticulars.map((row) => {
-                  return (
-                    <GeneralParticularstablerow
-                      field={row.field}
-                      data={row.data}
-                    />
-                  );
+                  return <GData field={row.field} data={row.data} />;
                 })}
               </Tbody>
             </Table>
@@ -73,12 +70,7 @@ function GeneralInformationdata() {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {HigherSecondaryDetails.map((row) => {
-                    return (
-                      <GeneralParticularstablerow
-                        field={row.field}
-                        data={row.data}
-                      />
-                    );
+                    return <GData field={row.field} data={row.data} />;
                   })}
                 </Tbody>
               </Table>
@@ -95,12 +87,7 @@ function GeneralInformationdata() {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {SecondaryDetails.map((row) => {
-                    return (
-                      <GeneralParticularstablerow
-                        field={row.field}
-                        data={row.data}
-                      />
-                    );
+                    return <GData field={row.field} data={row.data} />;
                   })}
                 </Tbody>
               </Table>
@@ -117,12 +104,7 @@ function GeneralInformationdata() {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {Father.map((row) => {
-                    return (
-                      <GeneralParticularstablerow
-                        field={row.field}
-                        data={row.data}
-                      />
-                    );
+                    return <GData field={row.field} data={row.data} />;
                   })}
                 </Tbody>
               </Table>
@@ -138,12 +120,7 @@ function GeneralInformationdata() {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {Mother.map((row) => {
-                    return (
-                      <GeneralParticularstablerow
-                        field={row.field}
-                        data={row.data}
-                      />
-                    );
+                    return <GData field={row.field} data={row.data} />;
                   })}
                 </Tbody>
               </Table>
@@ -160,12 +137,7 @@ function GeneralInformationdata() {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {AdmissionDetails.map((row) => {
-                    return (
-                      <GeneralParticularstablerow
-                        field={row.field}
-                        data={row.data}
-                      />
-                    );
+                    return <GData field={row.field} data={row.data} />;
                   })}
                 </Tbody>
               </Table>
@@ -182,12 +154,7 @@ function GeneralInformationdata() {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {ScholarshipDetails.map((row) => {
-                    return (
-                      <GeneralParticularstablerow
-                        field={row.field}
-                        data={row.data}
-                      />
-                    );
+                    return <GData field={row.field} data={row.data} />;
                   })}
                 </Tbody>
               </Table>
@@ -204,12 +171,7 @@ function GeneralInformationdata() {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {TechnicalSkills.map((row) => {
-                    return (
-                      <GeneralParticularstablerow
-                        field={row.field}
-                        data={row.data}
-                      />
-                    );
+                    return <GData field={row.field} data={row.data} />;
                   })}
                 </Tbody>
               </Table>
@@ -226,12 +188,7 @@ function GeneralInformationdata() {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {NonTechnicalSkills.map((row) => {
-                    return (
-                      <GeneralParticularstablerow
-                        field={row.field}
-                        data={row.data}
-                      />
-                    );
+                    return <GData field={row.field} data={row.data} />;
                   })}
                 </Tbody>
               </Table>
@@ -248,12 +205,7 @@ function GeneralInformationdata() {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {Goals.map((row) => {
-                    return (
-                      <GeneralParticularstablerow
-                        field={row.field}
-                        data={row.data}
-                      />
-                    );
+                    return <GData field={row.field} data={row.data} />;
                   })}
                 </Tbody>
               </Table>
@@ -270,12 +222,7 @@ function GeneralInformationdata() {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {ProfessionalMembership.map((row) => {
-                    return (
-                      <GeneralParticularstablerow
-                        field={row.field}
-                        data={row.data}
-                      />
-                    );
+                    return <GData field={row.field} data={row.data} />;
                   })}
                 </Tbody>
               </Table>
@@ -286,7 +233,12 @@ function GeneralInformationdata() {
       <SimpleGrid pt="1.5rem" columns={{ sm: 1, md: 2, xl: 2 }} gap={5}>
         <Card>
           <CardBody>
-            <Button colorScheme="orange" variant="solid" width="100%">
+            <Button
+              onClick={(GData = GeneralParticularstablerowedit)}
+              colorScheme="orange"
+              variant="solid"
+              width="100%"
+            >
               Edit
             </Button>
           </CardBody>
