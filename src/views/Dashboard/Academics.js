@@ -30,6 +30,7 @@ import TablesTableRow from "components/Tables/TablesTableRow";
 import { tablesTableData2 } from "variables/general";
 import Selection from "components/Select/Selection";
 import Upload from "components/Upload/Upload";
+import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
 
 function Academics() {
   const [data, setData] = useState([]);
@@ -54,6 +55,10 @@ function Academics() {
             </Text>
           </Flex>
         </CardBody>
+        <Card>
+          <CardHeader>Searh Student</CardHeader>
+          <SearchBar />
+        </Card>
         <Upload />
       </Card>
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>

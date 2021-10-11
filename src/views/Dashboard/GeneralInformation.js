@@ -29,6 +29,7 @@ import CardBody from "components/Card/CardBody.js";
 import TablesTableRow from "components/Tables/TablesTableRow";
 import { tablesTableData1 } from "variables/general";
 import Upload from "components/Upload/Upload";
+import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
 
 function GeneralInformation() {
   const [data, setData] = useState([]);
@@ -50,6 +51,10 @@ function GeneralInformation() {
             </Text>
           </Flex>
         </CardBody>
+        <Card>
+          <CardHeader>Searh Student</CardHeader>
+          <SearchBar />
+        </Card>
         <Upload />
       </Card>
 

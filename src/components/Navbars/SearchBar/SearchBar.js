@@ -5,6 +5,9 @@ import {
   InputGroup,
   InputLeftElement,
   useColorModeValue,
+  InputRightElement,
+  Button,
+  handleClick,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 export function SearchBar(props) {
@@ -14,11 +17,13 @@ export function SearchBar(props) {
   const mainorange = useColorModeValue("orange.300", "orange.300");
   const searchIconColor = useColorModeValue("gray.700", "gray.200");
   const inputBg = useColorModeValue("white", "gray.800");
+
   return (
     <InputGroup
       bg={inputBg}
+      mt="1rem"
       borderRadius="15px"
-      w="200px"
+      w="cover"
       _focus={{
         borderColor: { mainorange },
       }}
@@ -44,6 +49,11 @@ export function SearchBar(props) {
           ></IconButton>
         }
       />
+      <InputRightElement width="5rem">
+        <Button h="1.75rem" size="sm" onClick={handleClick}>
+          Search
+        </Button>
+      </InputRightElement>
       <Input
         fontSize="xs"
         py="11px"
