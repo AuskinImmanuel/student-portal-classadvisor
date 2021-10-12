@@ -22,6 +22,8 @@ import {
   DocumentIcon,
   RocketIcon,
 } from "components/Icons/Icons";
+import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
+import AcademicsDataEdit from "views/Pages/Edit/AcademicsDataEdit";
 
 var dashRoutes = [
   {
@@ -218,6 +220,49 @@ var dashRoutes = [
         ),
         icon: <StatsIcon color="inherit" />,
         component: Feedbackdata,
+        layout: "/admin",
+      },
+    ],
+  },
+  {
+    name: "TEST EDIT PAGES",
+    category: "account",
+    state: "pageCollapse",
+    views: [
+      {
+        path: "/GeneralInformationDataEdit",
+        name: (
+          <p
+            style={{
+              textAlign: "left",
+              lineHeight: "1.2rem",
+              whiteSpace: "normal",
+              wordWrap: "break-word",
+            }}
+          >
+            General Information Data Edit
+          </p>
+        ),
+        icon: <StatsIcon color="inherit" />,
+        component: GeneralInformationDataEdit,
+        layout: "/admin",
+      },
+      {
+        path: "/AcademicsDataEdit",
+        name: (
+          <p
+            style={{
+              textAlign: "left",
+              lineHeight: "1.2rem",
+              whiteSpace: "normal",
+              wordWrap: "break-word",
+            }}
+          >
+            Academics Data Edit
+          </p>
+        ),
+        icon: <StatsIcon color="inherit" />,
+        component: AcademicsDataEdit,
         layout: "/admin",
       },
     ],

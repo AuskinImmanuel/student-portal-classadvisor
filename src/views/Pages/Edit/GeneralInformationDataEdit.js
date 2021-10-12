@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 // Chakra imports
 import {
   Flex,
@@ -10,13 +9,13 @@ import {
   Thead,
   Tr,
   useColorModeValue,
+  Button,
   FormControl,
   FormLabel,
   FormErrorMessage,
   FormHelperText,
   Select,
   SimpleGrid,
-  Button,
   Grid,
   GridItem,
 } from "@chakra-ui/react";
@@ -24,7 +23,6 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import GeneralParticularstablerow from "components/Tables/GeneralParticularstablerow";
 import { GeneralParticulars } from "variables/general";
 import { HigherSecondaryDetails } from "variables/general";
 import { SecondaryDetails } from "variables/general";
@@ -35,18 +33,11 @@ import { TechnicalSkills } from "variables/general";
 import { NonTechnicalSkills } from "variables/general";
 import { Goals } from "variables/general";
 import { ProfessionalMembership } from "variables/general";
-import GeneralParticularstablerowedit from "components/Tables/EditTables/GeneralInformationTableRowEdit";
+import GeneralParticularsTableRowEdit from "components/Tables/EditTables/GeneralInformationTableRowEdit";
+import GeneralParticularstablerow from "components/Tables/GeneralParticularstablerow";
 
-function GeneralInformationdata({ location }) {
+function GeneralInformationDataEdit() {
   const textColor = useColorModeValue("gray.700", "white");
-  const history = useHistory();
-
-  const handleRoute = () => {
-    history.push("/GeneralParticularsTableRowEdit", {
-      from: GeneralInformationdata,
-    });
-  };
-  var GData = GeneralParticularstablerow;
 
   return (
     <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
@@ -61,11 +52,27 @@ function GeneralInformationdata({ location }) {
             <Table variant="simple" color={textColor}>
               <Tbody>
                 {GeneralParticulars.map((row) => {
-                  return <GData field={row.field} data={row.data} />;
+                  return (
+                    <GeneralParticularsTableRowEdit
+                      field={row.field}
+                      data={row.data}
+                    />
+                  );
                 })}
               </Tbody>
             </Table>
           </CardBody>
+          <Flex direction="column" align="flex-end" w="100%">
+            <Button
+              marginBottom="1rem"
+              marginTop="1rem"
+              marginRight="22.5rem"
+              colorScheme="orange"
+              variant="solid"
+            >
+              Submit
+            </Button>
+          </Flex>
         </Card>
         <SimpleGrid columns={{ sm: 1, md: 2, xl: 2 }} gap={4}>
           <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
@@ -78,11 +85,27 @@ function GeneralInformationdata({ location }) {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {HigherSecondaryDetails.map((row) => {
-                    return <GData field={row.field} data={row.data} />;
+                    return (
+                      <GeneralParticularsTableRowEdit
+                        field={row.field}
+                        data={row.data}
+                      />
+                    );
                   })}
                 </Tbody>
               </Table>
             </CardBody>
+            <Flex direction="column" align="flex-end" w="100%">
+              <Button
+                marginBottom="1rem"
+                marginTop="1rem"
+                marginRight="3.5rem"
+                colorScheme="orange"
+                variant="solid"
+              >
+                Submit
+              </Button>
+            </Flex>
           </Card>
 
           <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
@@ -95,11 +118,27 @@ function GeneralInformationdata({ location }) {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {SecondaryDetails.map((row) => {
-                    return <GData field={row.field} data={row.data} />;
+                    return (
+                      <GeneralParticularsTableRowEdit
+                        field={row.field}
+                        data={row.data}
+                      />
+                    );
                   })}
                 </Tbody>
               </Table>
             </CardBody>
+            <Flex direction="column" align="flex-end" w="100%">
+              <Button
+                marginBottom="1rem"
+                marginTop="1rem"
+                marginRight="3.5rem"
+                colorScheme="orange"
+                variant="solid"
+              >
+                Submit
+              </Button>
+            </Flex>
           </Card>
 
           <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
@@ -112,11 +151,27 @@ function GeneralInformationdata({ location }) {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {Father.map((row) => {
-                    return <GData field={row.field} data={row.data} />;
+                    return (
+                      <GeneralParticularsTableRowEdit
+                        field={row.field}
+                        data={row.data}
+                      />
+                    );
                   })}
                 </Tbody>
               </Table>
             </CardBody>
+            <Flex direction="column" align="flex-end" w="100%">
+              <Button
+                marginBottom="1rem"
+                marginTop="1rem"
+                marginRight="3.5rem"
+                colorScheme="orange"
+                variant="solid"
+              >
+                Submit
+              </Button>
+            </Flex>
           </Card>
           <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
             <CardHeader p="6px 0px 22px 0px">
@@ -128,11 +183,27 @@ function GeneralInformationdata({ location }) {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {Mother.map((row) => {
-                    return <GData field={row.field} data={row.data} />;
+                    return (
+                      <GeneralParticularsTableRowEdit
+                        field={row.field}
+                        data={row.data}
+                      />
+                    );
                   })}
                 </Tbody>
               </Table>
             </CardBody>
+            <Flex direction="column" align="flex-end" w="100%">
+              <Button
+                marginBottom="1rem"
+                marginTop="1rem"
+                marginRight="3.5rem"
+                colorScheme="orange"
+                variant="solid"
+              >
+                Submit
+              </Button>
+            </Flex>
           </Card>
 
           <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
@@ -145,11 +216,27 @@ function GeneralInformationdata({ location }) {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {AdmissionDetails.map((row) => {
-                    return <GData field={row.field} data={row.data} />;
+                    return (
+                      <GeneralParticularsTableRowEdit
+                        field={row.field}
+                        data={row.data}
+                      />
+                    );
                   })}
                 </Tbody>
               </Table>
             </CardBody>
+            <Flex direction="column" align="flex-end" w="100%">
+              <Button
+                marginBottom="1rem"
+                marginTop="1rem"
+                marginRight="3.5rem"
+                colorScheme="orange"
+                variant="solid"
+              >
+                Submit
+              </Button>
+            </Flex>
           </Card>
 
           <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
@@ -162,11 +249,27 @@ function GeneralInformationdata({ location }) {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {ScholarshipDetails.map((row) => {
-                    return <GData field={row.field} data={row.data} />;
+                    return (
+                      <GeneralParticularsTableRowEdit
+                        field={row.field}
+                        data={row.data}
+                      />
+                    );
                   })}
                 </Tbody>
               </Table>
             </CardBody>
+            <Flex direction="column" align="flex-end" w="100%">
+              <Button
+                marginBottom="1rem"
+                marginTop="1rem"
+                marginRight="3.5rem"
+                colorScheme="orange"
+                variant="solid"
+              >
+                Submit
+              </Button>
+            </Flex>
           </Card>
 
           <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
@@ -179,11 +282,27 @@ function GeneralInformationdata({ location }) {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {TechnicalSkills.map((row) => {
-                    return <GData field={row.field} data={row.data} />;
+                    return (
+                      <GeneralParticularsTableRowEdit
+                        field={row.field}
+                        data={row.data}
+                      />
+                    );
                   })}
                 </Tbody>
               </Table>
             </CardBody>
+            <Flex direction="column" align="flex-end" w="100%">
+              <Button
+                marginBottom="1rem"
+                marginTop="1rem"
+                marginRight="3.5rem"
+                colorScheme="orange"
+                variant="solid"
+              >
+                Submit
+              </Button>
+            </Flex>
           </Card>
 
           <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
@@ -196,11 +315,27 @@ function GeneralInformationdata({ location }) {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {NonTechnicalSkills.map((row) => {
-                    return <GData field={row.field} data={row.data} />;
+                    return (
+                      <GeneralParticularsTableRowEdit
+                        field={row.field}
+                        data={row.data}
+                      />
+                    );
                   })}
                 </Tbody>
               </Table>
             </CardBody>
+            <Flex direction="column" align="flex-end" w="100%">
+              <Button
+                marginBottom="1rem"
+                marginTop="1rem"
+                marginRight="3.5rem"
+                colorScheme="orange"
+                variant="solid"
+              >
+                Submit
+              </Button>
+            </Flex>
           </Card>
 
           <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
@@ -213,11 +348,27 @@ function GeneralInformationdata({ location }) {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {Goals.map((row) => {
-                    return <GData field={row.field} data={row.data} />;
+                    return (
+                      <GeneralParticularsTableRowEdit
+                        field={row.field}
+                        data={row.data}
+                      />
+                    );
                   })}
                 </Tbody>
               </Table>
             </CardBody>
+            <Flex direction="column" align="flex-end" w="100%">
+              <Button
+                marginBottom="1rem"
+                marginTop="1rem"
+                marginRight="3.5rem"
+                colorScheme="orange"
+                variant="solid"
+              >
+                Submit
+              </Button>
+            </Flex>
           </Card>
 
           <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
@@ -230,11 +381,27 @@ function GeneralInformationdata({ location }) {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   {ProfessionalMembership.map((row) => {
-                    return <GData field={row.field} data={row.data} />;
+                    return (
+                      <GeneralParticularsTableRowEdit
+                        field={row.field}
+                        data={row.data}
+                      />
+                    );
                   })}
                 </Tbody>
               </Table>
             </CardBody>
+            <Flex direction="column" align="flex-end" w="100%">
+              <Button
+                marginBottom="1rem"
+                marginTop="1rem"
+                marginRight="3.5rem"
+                colorScheme="orange"
+                variant="solid"
+              >
+                Submit
+              </Button>
+            </Flex>
           </Card>
         </SimpleGrid>
       </SimpleGrid>
@@ -242,12 +409,12 @@ function GeneralInformationdata({ location }) {
         <Card>
           <CardBody>
             <Button
-              onClick={"/GeneralParticularstablerowedit"}
+              onClick={GeneralParticularstablerow}
               colorScheme="orange"
               variant="solid"
               width="100%"
             >
-              Edit
+              Save
             </Button>
           </CardBody>
         </Card>
@@ -263,4 +430,4 @@ function GeneralInformationdata({ location }) {
   );
 }
 
-export default GeneralInformationdata;
+export default GeneralInformationDataEdit;
