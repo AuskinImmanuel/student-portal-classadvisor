@@ -30,14 +30,15 @@ import TablesTableRow from "components/Tables/TablesTableRow";
 import { tablesTableData1 } from "variables/general";
 import Upload from "components/Upload/Upload";
 import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
-
 function GeneralInformation() {
   const [data, setData] = useState([]);
   useEffect(async () => {
-    axios.get("http://localhost:5000/General").then((items) => {
+    let params = new URLSearchParams();
+    params.append("dept", "CSE");
+    params.append("batch", "2019-2023");
+    axios.post("http://localhost:5000/General", params).then((items) => {
       setData(items.data);
     });
-    console.log(data);
   });
   const textColor = useColorModeValue("gray.700", "white");
 
@@ -75,26 +76,25 @@ function GeneralInformation() {
         <CardBody>
           <Table variant="simple" color={textColor}>
             <Thead>
-              <Tr my=".8rem" pl="0px" color="gray.400">
-                <Th color="gray.400">S.No.</Th>
-                <Th pl="0px" color="gray.400">
-                  Name
-                </Th>
+              <Tr my=".8rem" color="gray.400">
+                <Th color="gray.400">Name</Th>
                 <Th color="gray.400">Resitration Number</Th>
                 <Th color="gray.400">Roll Number</Th>
                 <Th color="gray.400">Email</Th>
-                <Th></Th>
+                <Th color="gray.400">Department</Th>
+                <Th color="gray.400">Batch</Th>
               </Tr>
             </Thead>
             <Tbody>
               {data.map((item) => {
                 return (
                   <TablesTableRow
-                    sno={item.sno}
-                    name={item.name}
-                    reg={item.reg}
-                    email={item.email}
-                    roll={item.roll}
+                    name={item.sname}
+                    reg={item.reg_no}
+                    email={item.licet_email}
+                    roll={item.roll_no}
+                    dept={item.dept}
+                    batch={item.batch}
                   />
                 );
               })}
@@ -105,5 +105,4 @@ function GeneralInformation() {
     </Flex>
   );
 }
-
 export default GeneralInformation;
