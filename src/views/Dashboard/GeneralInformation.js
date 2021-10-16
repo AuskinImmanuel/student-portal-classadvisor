@@ -30,16 +30,15 @@ import TablesTableRow from "components/Tables/TablesTableRow";
 import { tablesTableData1 } from "variables/general";
 import Upload from "components/Upload/Upload";
 import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
+
 function GeneralInformation() {
   const [data, setData] = useState([]);
   useEffect(async () => {
-    let params = new URLSearchParams();
-    params.append("dept", "CSE");
-    params.append("batch", "2019-2023");
-    axios.post("http://localhost:5000/General", params).then((items) => {
+    axios.get("http://localhost:5000/General").then((items) => {
       setData(items.data);
+      console.log(items.data);
     });
-  });
+  },[]);
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
@@ -57,12 +56,13 @@ function GeneralInformation() {
           <SearchBar />
           <br />
           <Button
+            onClick="m"
             colorScheme="orange"
             alignSelf="flex-end"
             variant="solid"
             width="25%"
           >
-            Download
+            Download Report
           </Button>
         </Card>
       </Card>
@@ -76,28 +76,29 @@ function GeneralInformation() {
         <CardBody>
           <Table variant="simple" color={textColor}>
             <Thead>
-              <Tr my=".8rem" color="gray.400">
-                <Th color="gray.400">Name</Th>
-                <Th color="gray.400">Resitration Number</Th>
-                <Th color="gray.400">Roll Number</Th>
-                <Th color="gray.400">Email</Th>
-                <Th color="gray.400">Department</Th>
+              <Tr my=".8rem" pl="0px" color="gray.400">
+                <Th color="gray.400">Roll No.</Th>
+                <Th pl="0px" color="gray.400">
+                  Name
+                </Th>
+                <Th color="gray.400">Register No</Th>
                 <Th color="gray.400">Batch</Th>
+                <Th color="gray.400">Email</Th>
+                <Th></Th>
               </Tr>
             </Thead>
             <Tbody>
-              {data.map((item) => {
-                return (
-                  <TablesTableRow
-                    name={item.sname}
-                    reg={item.reg_no}
-                    email={item.licet_email}
-                    roll={item.roll_no}
-                    dept={item.dept}
-                    batch={item.batch}
-                  />
-                );
-              })}
+            {data.map((item) => {
+              return (
+                <TablesTableRow id={item.id}
+                  sno={item.roll_no}
+                  name={item.sname}
+                  reg={item.reg_no}
+                  email={item.licet_email}
+                  roll={item.batch}
+                />
+              );
+            })}
             </Tbody>
           </Table>
         </CardBody>
@@ -105,4 +106,5 @@ function GeneralInformation() {
     </Flex>
   );
 }
+
 export default GeneralInformation;

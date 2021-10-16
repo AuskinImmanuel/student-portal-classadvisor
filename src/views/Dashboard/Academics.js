@@ -31,6 +31,7 @@ import { tablesTableData2 } from "variables/general";
 import Selection from "components/Select/Selection";
 import Upload from "components/Upload/Upload";
 import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
+import myFunction from "../../components/Navbars/SearchBar/search";
 
 function Academics() {
   const [data, setData] = useState([]);
@@ -40,7 +41,6 @@ function Academics() {
     axios.get("http://localhost:5000/Academic").then((items) => {
       setData(items.data);
     });
-    console.log(data);
   });
 
   const textColor = useColorModeValue("gray.700", "white");
@@ -56,7 +56,7 @@ function Academics() {
           </Flex>
         </CardBody>
         <Card>
-          <CardHeader>Searh Student</CardHeader>
+          <CardHeader>Search Student</CardHeader>
           <SearchBar />
         </Card>
         <Upload />
@@ -68,28 +68,28 @@ function Academics() {
           </Text>
         </CardHeader>
         <CardBody>
-          <Table variant="simple" color={textColor}>
+          <Table variant="simple" color={textColor} id="dataTable">
             <Thead>
               <Tr my=".8rem" pl="0px" color="gray.400">
-                <Th color="gray.400">S.No.</Th>
+                <Th color="gray.400">Roll No.</Th>
                 <Th pl="0px" color="gray.400">
                   Name
                 </Th>
-                <Th color="gray.400">Resitration Number</Th>
-                <Th color="gray.400">Roll Number</Th>
+                <Th color="gray.400">Register No.</Th>
+                <Th color="gray.400">batch</Th>
                 <Th color="gray.400">Email</Th>
                 <Th></Th>
               </Tr>
             </Thead>
-            <Tbody>
+            <Tbody id = "tr" style={{display:''}}>
               {data.map((item) => {
                 return (
                   <TablesTableRow
-                    sno={item.sno}
-                    name={item.name}
-                    reg={item.reg}
-                    email={item.email}
-                    roll={item.roll}
+                    sno={item.roll_no}
+                    name={item.sname}
+                    reg={item.reg_no}
+                    email={item.licet_email}
+                    roll={item.batch}
                   />
                 );
               })}
