@@ -36,6 +36,7 @@ export default function handleLogin() {
     //    document.getElementById("email-fail").classList.add("d-none");
     //    document.getElementById("server-fail").classList.add("d-none");
         console.log("Logged In");
+        window.location.href="http://localhost:3000/public/Template/academic_details.xlsx#/admin/dashboard";
         localStorage.setItem("email", result.data[0].email);
         localStorage.setItem("auth_token", result.data[0].auth_token);
         localStorage.setItem("user_name", result.data[0].user_name);
