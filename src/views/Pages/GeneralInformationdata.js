@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import axios from 'axios';
 // Chakra imports
 import {
   Flex,
@@ -9,6 +10,7 @@ import {
   Th,
   Thead,
   Tr,
+  Td,
   useColorModeValue,
   FormControl,
   FormLabel,
@@ -38,6 +40,15 @@ import { ProfessionalMembership } from "variables/general";
 import GeneralParticularstablerowedit from "components/Tables/EditTables/GeneralInformationTableRowEdit";
 
 function GeneralInformationdata({ location }) {
+  const [data, setData] = useState([]);
+
+  let params = new URLSearchParams();
+  params.append("RollNumber",localStorage.getItem("generalStudent"));
+
+  axios.post("http://localhost:5000/GeneralData",params).then((items) => {
+    setData(items.data);
+});
+
   const textColor = useColorModeValue("gray.700", "white");
   const history = useHistory();
 
@@ -60,10 +71,223 @@ function GeneralInformationdata({ location }) {
           <CardBody>
             <Table variant="simple" color={textColor}>
               <Tbody>
-                {GeneralParticulars.map((row) => {
-                  return <GData field={row.field} data={row.data} />;
-                })}
-              </Tbody>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" > Student Name </Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.sname} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" >Roll No.</Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.roll_no} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" >Register No.</Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.reg_no} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" >Sex</Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.gender} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" >Date Of Birth</Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.dob} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" >  Nationality </Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.sname}/>;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" > Religion </Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.religion} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" > If Catholic, Parish? </Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.religion} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" > Dalit Catholic </Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.religion} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" > Community </Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.religion} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" > Blood Group </Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.religion} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" >Mother Tounge</Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.religion} />;
+                  })}
+              </Tr>              
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" > Contact Number</Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.religion} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" >Aadhar No.</Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.religion} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" >Official Email ID</Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.religion} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" >personal Email ID</Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.religion} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" >Present Address</Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.religion} />;
+                  })}
+              </Tr>
+              <Tr>
+                      <Td minWidth={{ sm: "17rem" }}>
+                    <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+                  <Flex direction="column">
+                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" >Permanent Address</Text>
+                    </Flex>
+                  </Flex>
+                </Td>
+                {data.map((item) => {
+                    return <GData data={item.religion} />;
+                  })}
+              </Tr>
+            </Tbody>
             </Table>
           </CardBody>
         </Card>
