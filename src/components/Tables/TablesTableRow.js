@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+
 import {
   Avatar,
   Badge,
@@ -8,7 +10,7 @@ import {
   Tr,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
+import axios from "axios";
 
 function TablesTableRow(props) {
   const { name, email, reg, roll, dept, batch } = props;
@@ -25,10 +27,10 @@ function TablesTableRow(props) {
       fontWeight="bold"
       minWidth="100%"
       onClick={() => {
-        window.open(
-          "http://localhost:3000/admin#/admin/GeneralInformationdata"
-        );
-        localStorage.setItem("genralStudent", roll);
+        localStorage.setItem("generalStudent",roll);
+        let params = new URLSearchParams();
+          params.append("RollNumber",localStorage.getItem("generalStudent"));
+        window.location.href="http://localhost:3000/admin#/admin/GeneralInformationdata";
       }}
       id={roll}
       _hover={{
@@ -37,26 +39,6 @@ function TablesTableRow(props) {
         color: "white",
       }}
     >
-      <Td minWidth={{ sm: "250px" }}>
-        <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
-          <Flex direction="column">
-            <Text
-              fontSize="md"
-              color={textColor}
-              fontWeight="bold"
-              minWidth="100%"
-            >
-              {name}
-            </Text>
-          </Flex>
-        </Flex>
-      </Td>
-      <Td minWidth={{ sm: "200px" }} pl="0rem">
-        <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
-          <Flex direction="column">{reg}</Flex>
-        </Flex>
-      </Td>
-
       <Td>
         <Flex direction="column">
           <Text fontSize="md" color={textColor} fontWeight="bold">
@@ -65,18 +47,25 @@ function TablesTableRow(props) {
         </Flex>
       </Td>
       <Td>
-        <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
-          {email}
-        </Text>
+        <Flex direction="column">
+          <Text fontSize="md" color={textColor} fontWeight="bold">
+            {name}
+          </Text>
+        </Flex>
       </Td>
       <Td>
         <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
-          {dept}
+          {reg}
         </Text>
       </Td>
       <Td>
         <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
           {batch}
+        </Text>
+      </Td>
+      <Td>
+        <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
+          {email}
         </Text>
       </Td>
       {/* </Button> */}
