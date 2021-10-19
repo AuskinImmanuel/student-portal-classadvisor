@@ -31,7 +31,6 @@ import { tablesTableData2 } from "variables/general";
 import Selection from "components/Select/Selection";
 import Upload from "components/Upload/Upload";
 import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
-import myFunction from "../../components/Navbars/SearchBar/search";
 
 function Academics() {
   const [data, setData] = useState([]);
