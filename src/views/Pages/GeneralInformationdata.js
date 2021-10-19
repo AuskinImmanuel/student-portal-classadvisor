@@ -312,7 +312,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.hse_school_name} />;
                   })}
                 </Tr>
                 <Tr>
@@ -324,7 +324,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.hse_board} />;
                   })}
                 </Tr>
                 <Tr>
@@ -336,7 +336,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                   {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.hse_medium} />;
                   })}
                 </Tr>
                 <Tr>
@@ -348,7 +348,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.hse_sec_lang} />;
                   })}
                 </Tr>
                 <Tr>
@@ -360,7 +360,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.hse_group} />;
                   })}
                 </Tr>
                 <Tr>
@@ -372,7 +372,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.hse_marks} />;
                   })}
                 </Tr>
                 <Tr>
@@ -384,7 +384,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.hse_percentage} />;
                   })}
                 </Tr>
                 <Tr>
@@ -396,7 +396,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.hse_cutoff} />;
                   })}
                 </Tr>
                 <Tr>
@@ -408,7 +408,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.hse_attempts} />;
                   })}
                 </Tr>
                 </Tbody>
@@ -434,7 +434,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.sslc_school_name} />;
                   })}
                 </Tr>
                 <Tr>
@@ -446,7 +446,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.sslc_board} />;
                   })}
                 </Tr>
                 <Tr>
@@ -458,7 +458,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                   {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.sslc_medium} />;
                   })}
                 </Tr>
                 <Tr>
@@ -470,19 +470,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
-                  })}
-                </Tr>
-                <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
-                  <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
-                  <Flex direction="column">
-                <Text marginLeft="10em" fontSize="md" color={textColor} fontWeight="bold" minWidth="100%" >Group</Text>
-                  </Flex>
-                  </Flex>
-                </Td>
-                {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.sslc_sec_lang} />;
                   })}
                 </Tr>
                 <Tr>
@@ -494,7 +482,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.sslc_marks} />;
                   })}
                 </Tr>
                 <Tr>
@@ -506,7 +494,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.sslc_percentage} />;
                   })}
                 </Tr>
                 <Tr>
@@ -518,7 +506,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.sslc_cutoff} />;
                   })}
                 </Tr>
                 <Tr>
@@ -530,7 +518,7 @@ function GeneralInformationdata({ location }) {
                   </Flex>
                 </Td>
                 {data.map((item) => {
-                    return <GData data={item.roll_no} />;
+                    return <GData data={item.sslc_attempts} />;
                   })}
                 </Tr>
                 </Tbody>
