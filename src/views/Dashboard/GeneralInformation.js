@@ -78,9 +78,7 @@ function GeneralInformation() {
             <Thead>
               <Tr my=".8rem" pl="0px" color="gray.400">
                 <Th color="gray.400">Roll No.</Th>
-                <Th pl="0px" color="gray.400">
-                  Name
-                </Th>
+                <Th color="gray.400">Name</Th>
                 <Th color="gray.400">Register No</Th>
                 <Th color="gray.400">Batch</Th>
                 <Th color="gray.400">Email</Th>
@@ -89,16 +87,16 @@ function GeneralInformation() {
             </Thead>
             <Tbody>
             {data.map((item) => {
-              return (
-                <TablesTableRow id={item.id}
-                  sno={item.roll_no}
-                  name={item.sname}
-                  reg={item.reg_no}
-                  email={item.licet_email}
-                  roll={item.batch}
-                />
-              );
-            })}
+                return (
+                  <TablesTableRow
+                    roll={item.roll_no}
+                    name={item.sname}
+                    reg={item.reg_no}
+                    batch={item.batch}
+                    email={item.licet_email}
+                  />
+                );
+              })}
             </Tbody>
           </Table>
         </CardBody>

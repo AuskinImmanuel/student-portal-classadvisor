@@ -71,9 +71,7 @@ function Academics() {
             <Thead>
               <Tr my=".8rem" pl="0px" color="gray.400">
                 <Th color="gray.400">Roll No.</Th>
-                <Th pl="0px" color="gray.400">
-                  Name
-                </Th>
+                <Th color="gray.400">Name</Th>
                 <Th color="gray.400">Register No.</Th>
                 <Th color="gray.400">batch</Th>
                 <Th color="gray.400">Email</Th>
@@ -84,11 +82,11 @@ function Academics() {
               {data.map((item) => {
                 return (
                   <TablesTableRow
-                    sno={item.roll_no}
+                    roll={item.roll_no}
                     name={item.sname}
                     reg={item.reg_no}
+                    batch={item.batch}
                     email={item.licet_email}
-                    roll={item.batch}
                   />
                 );
               })}
