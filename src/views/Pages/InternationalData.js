@@ -17,6 +17,7 @@ import {
   FormErrorMessage,
   FormHelperText,
   Select,
+  Button,
   SimpleGrid,
 } from "@chakra-ui/react";
 // Custom components
@@ -68,6 +69,30 @@ function InternationalData() {
                 })}
               </Tbody>
             </Table>
+          </CardBody>
+        </Card>
+      </SimpleGrid>
+      <SimpleGrid pt="1.5rem" columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
+        <Card>
+          <CardHeader p="6px 0px 22px 0px">
+            <Text fontSize="xl" color={textColor} fontWeight="bold">
+              Verified
+            </Text>
+          </CardHeader>
+          <CardBody>
+            <Button
+              onClick={"/GeneralParticularstablerowedit"}
+              colorScheme="orange"
+              variant="solid"
+              width="10%"
+            >
+              Yes
+            </Button>
+          </CardBody>
+          <CardBody>
+            <Button colorScheme="orange" variant="solid" width="10%">
+              No
+            </Button>
           </CardBody>
         </Card>
       </SimpleGrid>

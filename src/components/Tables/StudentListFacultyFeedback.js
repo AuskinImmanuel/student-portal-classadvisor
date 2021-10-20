@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 
-function TablesTableRow(props) {
+function StudentListFacultyFeedback(props) {
   const { name, email, reg, roll, dept, batch } = props;
   const textColor = useColorModeValue("gray.700", "white");
   const bgStatus = useColorModeValue("gray.400", "#1a202c");
@@ -27,10 +27,11 @@ function TablesTableRow(props) {
       fontWeight="bold"
       minWidth="100%"
       onClick={() => {
-        localStorage.setItem("generalStudent",roll);
+        localStorage.setItem("generalStudent", roll);
         let params = new URLSearchParams();
-          params.append("RollNumber",localStorage.getItem("generalStudent"));
-        window.location.href="http://localhost:3000/admin#/admin/GeneralInformationdata";
+        params.append("RollNumber", localStorage.getItem("generalStudent"));
+        window.location.href =
+          "http://localhost:3000/admin#/admin/Feedbackdata";
       }}
       id={roll}
       _hover={{
@@ -68,9 +69,8 @@ function TablesTableRow(props) {
           {email}
         </Text>
       </Td>
-      {/* </Button> */}
     </Tr>
   );
 }
 
-export default TablesTableRow;
+export default StudentListFacultyFeedback;

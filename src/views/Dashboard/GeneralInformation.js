@@ -26,8 +26,7 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import TablesTableRow from "components/Tables/TablesTableRow";
-import { tablesTableData1 } from "variables/general";
+import StudentListGeneral from "components/Tables/StudentListGeneral";
 import Upload from "components/Upload/Upload";
 import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
 
@@ -38,7 +37,7 @@ function GeneralInformation() {
       setData(items.data);
       console.log(items.data);
     });
-  },[]);
+  }, []);
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
@@ -86,9 +85,9 @@ function GeneralInformation() {
               </Tr>
             </Thead>
             <Tbody>
-            {data.map((item) => {
+              {data.map((item) => {
                 return (
-                  <TablesTableRow
+                  <StudentListGeneral
                     roll={item.roll_no}
                     name={item.sname}
                     reg={item.reg_no}

@@ -26,9 +26,7 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import TablesTableRow from "components/Tables/TablesTableRow";
-import { tablesTableData2 } from "variables/general";
-import Selection from "components/Select/Selection";
+import StudentListAcademic from "components/Tables/StudentListAcademic";
 import Upload from "components/Upload/Upload";
 import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
 
@@ -78,10 +76,10 @@ function Academics() {
                 <Th></Th>
               </Tr>
             </Thead>
-            <Tbody id = "tr" style={{display:''}}>
+            <Tbody id="tr" style={{ display: "" }}>
               {data.map((item) => {
                 return (
-                  <TablesTableRow
+                  <StudentListAcademic
                     roll={item.roll_no}
                     name={item.sname}
                     reg={item.reg_no}

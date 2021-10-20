@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 // Chakra imports
 import {
   Flex,
@@ -19,12 +20,18 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import TablesTableRow from "components/Tables/TablesTableRow";
-import { tablesTableData4 } from "variables/general";
 import Selection from "components/Select/Selection";
 import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
+import StudentListInternational from "components/Tables/StudentListInternational";
 
 function InternationalExposure() {
+  const [data, setData] = useState([]);
+  useEffect(async () => {
+    axios.get("http://localhost:5000/General").then((items) => {
+      setData(items.data);
+      console.log(items.data);
+    });
+  }, []);
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
@@ -72,14 +79,14 @@ function InternationalExposure() {
               </Tr>
             </Thead>
             <Tbody>
-              {tablesTableData4.map((row) => {
+              {data.map((item) => {
                 return (
-                  <TablesTableRow
-                    sno={row.sno}
-                    name={row.name}
-                    reg={row.reg}
-                    email={row.email}
-                    roll={row.roll}
+                  <StudentListInternational
+                    roll={item.roll_no}
+                    name={item.sname}
+                    reg={item.reg_no}
+                    batch={item.batch}
+                    email={item.licet_email}
                   />
                 );
               })}
