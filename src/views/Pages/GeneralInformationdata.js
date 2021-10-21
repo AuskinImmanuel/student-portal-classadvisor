@@ -87,8 +87,7 @@ function GeneralInformationdata({ location }) {
                           fontWeight="bold"
                           minWidth="100%"
                         >
-                          {" "}
-                          Student Name{" "}
+                          Student Name
                         </Text>
                       </Flex>
                     </Flex>

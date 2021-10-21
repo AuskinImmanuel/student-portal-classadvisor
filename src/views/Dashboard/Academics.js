@@ -10,18 +10,14 @@ import {
   Thead,
   Tr,
   useColorModeValue,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-  Select,
-  SimpleGrid,
+  IconButton,
   Button,
-  useDisclosure,
-  Collapse,
-  Box,
   Input,
+  InputGroup,
+  InputLeftElement,
+  useDisclosure,
 } from "@chakra-ui/react";
+import { SearchIcon } from "@chakra-ui/icons";
 // Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
@@ -32,7 +28,7 @@ import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
 
 function Academics() {
   const [data, setData] = useState([]);
-  const { isOpen, onToggle } = useDisclosure();
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(async () => {
     axios.get("http://localhost:5000/Academic").then((items) => {
@@ -41,6 +37,9 @@ function Academics() {
   });
 
   const textColor = useColorModeValue("gray.700", "white");
+  const inputBg = useColorModeValue("white", "gray.800");
+  const mainorange = useColorModeValue("orange.300", "orange.300");
+  const searchIconColor = useColorModeValue("gray.700", "gray.200");
 
   return (
     <Flex direction="column" pt={{ base: "120px", md: "75px" }}>
@@ -54,7 +53,48 @@ function Academics() {
         </CardBody>
         <Card>
           <CardHeader>Search Student</CardHeader>
-          <SearchBar />
+          <InputGroup
+            bg={inputBg}
+            mt="1rem"
+            borderRadius="15px"
+            w="cover"
+            _focus={{
+              borderColor: { mainorange },
+            }}
+            _active={{
+              borderColor: { mainorange },
+            }}
+          >
+            <InputLeftElement
+              children={
+                <IconButton
+                  bg="inherit"
+                  borderRadius="inherit"
+                  _hover="none"
+                  _active={{
+                    bg: "inherit",
+                    transform: "none",
+                    borderColor: "transparent",
+                  }}
+                  _focus={{
+                    boxShadow: "none",
+                  }}
+                  icon={
+                    <SearchIcon color={searchIconColor} w="15px" h="15px" />
+                  }
+                ></IconButton>
+              }
+            />
+
+            <Input
+              onChange={(event) => setSearchTerm(event.target.value)}
+              fontSize="xs"
+              py="11px"
+              placeholder="Type here..."
+              borderRadius="inherit"
+              value={searchTerm}
+            />
+          </InputGroup>
         </Card>
         <Upload />
       </Card>
@@ -76,18 +116,39 @@ function Academics() {
                 <Th></Th>
               </Tr>
             </Thead>
-            <Tbody id="tr" style={{ display: "" }}>
-              {data.map((item) => {
-                return (
-                  <StudentListAcademic
-                    roll={item.roll_no}
-                    name={item.sname}
-                    reg={item.reg_no}
-                    batch={item.batch}
-                    email={item.licet_email}
-                  />
-                );
-              })}
+            <Tbody>
+              {data
+                .filter((item) => {
+                  if (searchTerm == "") {
+                    return item;
+                  } else if (
+                    item.sname
+                      .toLowerCase()
+                      .includes(searchTerm.toLocaleLowerCase()) ||
+                    item.roll_no
+                      .toLowerCase()
+                      .includes(searchTerm.toLocaleLowerCase()) ||
+                    item.batch
+                      .toLowerCase()
+                      .includes(searchTerm.toLocaleLowerCase()) ||
+                    item.reg_no
+                      .toLowerCase()
+                      .includes(searchTerm.toLocaleLowerCase())
+                  ) {
+                    return item;
+                  }
+                })
+                .map((item) => {
+                  return (
+                    <StudentListAcademic
+                      roll={item.roll_no}
+                      name={item.sname}
+                      reg={item.reg_no}
+                      batch={item.batch}
+                      email={item.licet_email}
+                    />
+                  );
+                })}
             </Tbody>
           </Table>
         </CardBody>
