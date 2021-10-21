@@ -115,8 +115,11 @@ export default function AdminNavbar(props) {
         <Box mb={{ sm: "8px", md: "0px" }}>
           <Breadcrumb>
             <BreadcrumbItem color={mainText}>
-              <BreadcrumbLink href="#" color={secondaryText}>
-                Pages
+              <BreadcrumbLink
+                href="http://localhost:3000/admin#/admin/dashboard"
+                color={secondaryText}
+              >
+                Class Advisor
               </BreadcrumbLink>
             </BreadcrumbItem>
 
