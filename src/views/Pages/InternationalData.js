@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 // Chakra imports
 import {
   Flex,
@@ -17,10 +18,8 @@ import {
   FormErrorMessage,
   FormHelperText,
   Select,
-  Button,
   SimpleGrid,
 } from "@chakra-ui/react";
-import { Scrollbar } from "react-scrollbars-custom";
 // Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
@@ -29,74 +28,60 @@ import InternationalTableRow from "components/Tables/InternationalTableRow";
 import { International } from "variables/general";
 
 function InternationalData() {
+
+  const [data, setData] = useState([]);
+
+  let params = new URLSearchParams();
+  params.append("Internexroll", localStorage.getItem("International"));
+
+    axios.post("http://localhost:5000/InternationalExposure",params).then((items) => {
+      setData(items.data);
+      console.log(items.data);
+    });
+
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
     <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
-        <Card>
-          <Scrollbar style={{ Color: "green", width: "cover", height: 700 }}>
-            <CardHeader p="6px 0px 22px 0px">
-              <Text fontSize="xl" color={textColor} fontWeight="bold">
-                Summer Program
-              </Text>
-            </CardHeader>
-            <CardBody>
-              <Table variant="simple" color={textColor}>
-                <Thead>
-                  <Tr my=".8rem" color="gray.400">
-                    <Th color="gray.400">Campus</Th>
-                    <Th color="gray.400">Date and Year</Th>
-                    <Th color="gray.400">Project</Th>
-                    <Th color="gray.400">Outcome</Th>
-                    <Th color="gray.400">Personal Development</Th>
-                    <Th color="gray.400">
-                      Foreign Language Courses Completed or Pursuing
-                    </Th>
-                  </Tr>
-                </Thead>
+        <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+          <CardHeader p="6px 0px 22px 0px">
+            <Text fontSize="xl" color={textColor} fontWeight="bold">
+              Summer Program
+            </Text>
+          </CardHeader>
+          <CardBody>
+            <Table variant="simple" color={textColor}>
+              <Thead>
+                <Tr my=".8rem" pl="0px" color="gray.400">
+                  <Th color="gray.400">Campus</Th>
+                  <Th color="gray.400">Date and Year</Th>
+                  <Th color="gray.400">Project</Th>
+                  <Th color="gray.400">Outcome</Th>
+                  <Th color="gray.400">Personal Development</Th>
+                  <Th color="gray.400">
+                    Foreign Language Courses Completed or Pursuing
+                  </Th>
+                </Tr>
+              </Thead>
 
-                <Tbody>
-                  {International.map((row) => {
-                    return (
-                      <InternationalTableRow
-                        row1={row.row1}
-                        row2={row.row2}
-                        row3={row.row3}
-                        row4={row.row4}
-                        row5={row.row5}
-                        row6={row.row6}
-                      />
-                    );
-                  })}
-                </Tbody>
-              </Table>
-            </CardBody>
-          </Scrollbar>
+              <Tbody>
+                {data.map((item) => {
+                  return (
+                    <InternationalTableRow
+                      row1={item.foreign_campus}
+                      row2={item.duration}
+                      row3={item.project}
+                      row4={item.outcome}
+                      row5={item.personal_development}
+                      row6={item.foreign_language_courses}
+                    />
+                  );
+                })}
+              </Tbody>
+            </Table>
+          </CardBody>
         </Card>
-
-        <Flex alignSelf="flex-end">
-          <Card width="10rem">
-            <CardHeader p="6px 0px 22px 0px">
-              <Text fontSize="xl" color={textColor} fontWeight="bold">
-                Verified
-              </Text>
-            </CardHeader>
-            <CardBody>
-              <Button
-                onClick={"/GeneralParticularstablerowedit"}
-                colorScheme="orange"
-                variant="solid"
-                width="4rem"
-              >
-                Yes
-              </Button>
-              <Button colorScheme="orange" variant="solid" width="4rem" ms="3">
-                No
-              </Button>
-            </CardBody>
-          </Card>
-        </Flex>
       </SimpleGrid>
     </Flex>
   );
