@@ -9,6 +9,8 @@ import {
   Th,
   Thead,
   Tr,
+  Td,
+  Button,
   useColorModeValue,
   Stat,
   StatLabel,
@@ -33,12 +35,11 @@ function InternationalData() {
 
   let params = new URLSearchParams();
   params.append("Internexroll", localStorage.getItem("International"));
-
+  useEffect(async () => {
     axios.post("http://localhost:5000/InternationalExposure",params).then((items) => {
       setData(items.data);
-      console.log(items.data);
     });
-
+  });
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
@@ -62,13 +63,15 @@ function InternationalData() {
                   <Th color="gray.400">
                     Foreign Language Courses Completed or Pursuing
                   </Th>
+                  <Th color="gray.400">Edit</Th>
+                  <Th color="gray.400">Delete</Th>
                 </Tr>
               </Thead>
 
               <Tbody>
                 {data.map((item) => {
                   return (
-                    <InternationalTableRow
+                    <InternationalTableRow id = {item.s_no}
                       row1={item.foreign_campus}
                       row2={item.duration}
                       row3={item.project}
