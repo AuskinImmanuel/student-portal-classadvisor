@@ -27,11 +27,8 @@ function StudentListInternational(props) {
       fontWeight="bold"
       minWidth="100%"
       onClick={() => {
-        localStorage.setItem("generalStudent", roll);
-        let params = new URLSearchParams();
-        params.append("RollNumber", localStorage.getItem("generalStudent"));
-        window.location.href =
-          "http://localhost:3000/admin#/admin/InternationalData";
+        localStorage.setItem("International", roll);
+        window.location.href = "http://localhost:3000/admin#/admin/InternationalData";
       }}
       id={roll}
       _hover={{

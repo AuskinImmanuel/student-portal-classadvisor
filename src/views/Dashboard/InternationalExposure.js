@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from 'axios';
 // Chakra imports
 import {
   Flex,
@@ -20,18 +20,22 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import StudentListInternational from "components/Tables/StudentListInternational";
+import { tablesTableData4 } from "variables/general";
 import Selection from "components/Select/Selection";
 import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
-import StudentListInternational from "components/Tables/StudentListInternational";
 
 function InternationalExposure() {
+
   const [data, setData] = useState([]);
   useEffect(async () => {
-    axios.get("http://localhost:5000/General").then((items) => {
+    axios.get("http://localhost:5000/InternationalExpo").then((items) => {
       setData(items.data);
       console.log(items.data);
     });
-  }, []);
+  },[]);
+
+
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
@@ -67,19 +71,16 @@ function InternationalExposure() {
         <CardBody>
           <Table variant="simple" color={textColor}>
             <Thead>
-              <Tr my=".8rem" pl="0px" color="gray.400">
-                <Th color="gray.400">S.No.</Th>
-                <Th pl="0px" color="gray.400">
-                  Name
-                </Th>
-                <Th color="gray.400">Resitration Number</Th>
-                <Th color="gray.400">Roll Number</Th>
+            <Tr my=".8rem" pl="0px" color="gray.400">
+                <Th color="gray.400">Roll No.</Th>
+                <Th color="gray.400">Name</Th>
+                <Th color="gray.400">Register No</Th>
+                <Th color="gray.400">Batch</Th>
                 <Th color="gray.400">Email</Th>
-                <Th></Th>
               </Tr>
             </Thead>
             <Tbody>
-              {data.map((item) => {
+            {data.map((item) => {
                 return (
                   <StudentListInternational
                     roll={item.roll_no}
