@@ -52,7 +52,12 @@ function Academics() {
           </Flex>
         </CardBody>
         <Card>
-          <CardHeader>Search Student</CardHeader>
+          <CardHeader>
+            {" "}
+            <Text fontSize="lg" color={textColor} fontWeight="semi">
+              Search Student
+            </Text>
+          </CardHeader>
           <InputGroup
             bg={inputBg}
             mt="1rem"
