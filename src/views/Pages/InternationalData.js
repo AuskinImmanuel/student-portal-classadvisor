@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import axios from "axios";
 // Chakra imports
 import {
   Flex,
@@ -30,22 +30,23 @@ import InternationalTableRow from "components/Tables/InternationalTableRow";
 import { International } from "variables/general";
 
 function InternationalData() {
-
   const [data, setData] = useState([]);
 
   let params = new URLSearchParams();
   params.append("Internexroll", localStorage.getItem("International"));
   useEffect(async () => {
-    axios.post("http://localhost:5000/InternationalExposure",params).then((items) => {
-      setData(items.data);
-    });
+    axios
+      .post("http://localhost:5000/InternationalExposure", params)
+      .then((items) => {
+        setData(items.data);
+      });
   });
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
     <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
-        <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+        <Card overflowX={{ sm: "scroll" }}>
           <CardHeader p="6px 0px 22px 0px">
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Summer Program
@@ -71,7 +72,8 @@ function InternationalData() {
               <Tbody>
                 {data.map((item) => {
                   return (
-                    <InternationalTableRow id = {item.s_no}
+                    <InternationalTableRow
+                      id={item.s_no}
                       row1={item.foreign_campus}
                       row2={item.duration}
                       row3={item.project}

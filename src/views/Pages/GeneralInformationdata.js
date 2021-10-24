@@ -68,6 +68,7 @@ function GeneralInformationdata({ location }) {
               General Particulars
             </Text>
           </CardHeader>
+
           <CardBody>
             <Table variant="simple" color={textColor}>
               <Tbody>
