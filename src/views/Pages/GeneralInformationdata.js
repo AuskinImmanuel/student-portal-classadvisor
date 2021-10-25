@@ -73,7 +73,7 @@ function GeneralInformationdata({ location }) {
             <Table variant="simple" color={textColor}>
               <Tbody>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -98,7 +98,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -123,7 +123,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -148,7 +148,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -173,7 +173,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -198,7 +198,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -224,7 +224,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -250,7 +250,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -276,7 +276,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -302,7 +302,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -328,7 +328,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -354,7 +354,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -379,7 +379,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -405,7 +405,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -430,7 +430,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -455,7 +455,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -480,7 +480,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -505,7 +505,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -544,7 +544,7 @@ function GeneralInformationdata({ location }) {
             <Table variant="simple" color={textColor}>
               <Tbody>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -569,7 +569,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -594,7 +594,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -619,7 +619,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -644,7 +644,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -669,7 +669,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -694,7 +694,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -719,7 +719,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -744,7 +744,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -783,7 +783,7 @@ function GeneralInformationdata({ location }) {
             <Table variant="simple" color={textColor}>
               <Tbody>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -808,7 +808,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -833,7 +833,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -858,7 +858,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -883,7 +883,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -908,7 +908,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -933,7 +933,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -958,7 +958,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -997,7 +997,7 @@ function GeneralInformationdata({ location }) {
             <Table variant="simple" color={textColor}>
               <Tbody>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1022,7 +1022,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1047,7 +1047,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1072,7 +1072,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1097,7 +1097,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1122,7 +1122,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1147,7 +1147,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1172,7 +1172,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1197,7 +1197,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1222,7 +1222,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1247,7 +1247,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1272,7 +1272,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1297,7 +1297,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1322,7 +1322,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1361,7 +1361,7 @@ function GeneralInformationdata({ location }) {
             <Table variant="simple" color={textColor}>
               <Tbody>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1386,7 +1386,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1411,7 +1411,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1436,7 +1436,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1461,7 +1461,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1486,7 +1486,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1511,7 +1511,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1536,7 +1536,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1561,7 +1561,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1586,7 +1586,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1611,7 +1611,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1650,7 +1650,7 @@ function GeneralInformationdata({ location }) {
             <Table variant="simple" color={textColor}>
               <Tbody>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1675,7 +1675,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1700,7 +1700,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1725,7 +1725,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1750,7 +1750,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1789,7 +1789,7 @@ function GeneralInformationdata({ location }) {
             <Table variant="simple" color={textColor}>
               <Tbody>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1814,7 +1814,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1839,7 +1839,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1864,7 +1864,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1904,7 +1904,7 @@ function GeneralInformationdata({ location }) {
             <Table variant="simple" color={textColor}>
               <Tbody>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1929,7 +1929,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1954,7 +1954,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -1979,7 +1979,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -2005,7 +2005,7 @@ function GeneralInformationdata({ location }) {
                 </Tr>
 
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -2031,7 +2031,7 @@ function GeneralInformationdata({ location }) {
                 </Tr>
 
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -2057,7 +2057,7 @@ function GeneralInformationdata({ location }) {
                 </Tr>
 
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -2083,7 +2083,7 @@ function GeneralInformationdata({ location }) {
                 </Tr>
 
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -2109,7 +2109,7 @@ function GeneralInformationdata({ location }) {
                 </Tr>
 
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -2135,7 +2135,7 @@ function GeneralInformationdata({ location }) {
                 </Tr>
 
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -2174,7 +2174,7 @@ function GeneralInformationdata({ location }) {
             <Table variant="simple" color={textColor}>
               <Tbody>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -2199,7 +2199,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -2224,7 +2224,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -2249,7 +2249,7 @@ function GeneralInformationdata({ location }) {
                   })}
                 </Tr>
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"
@@ -2275,7 +2275,7 @@ function GeneralInformationdata({ location }) {
                 </Tr>
 
                 <Tr>
-                  <Td minWidth={{ sm: "17rem" }}>
+                  <Td minWidth={{ sm: "25em" }}>
                     <Flex
                       align="center"
                       py=".8rem"

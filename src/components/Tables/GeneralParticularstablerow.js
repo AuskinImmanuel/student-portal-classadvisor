@@ -18,24 +18,20 @@ function GeneralParticularstablerow(props) {
 
   return (
     <Tr>
-      <Td minWidth={{ sm: "17rem" }}>
+      <Td minWidth={{ sm: "20em" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">
             <Text
               fontSize="md"
               color={textColor}
-              fontWeight="bold"
+              fontWeight="light-bold"
               minWidth="100%"
             >
-              {field}
+              {data}
             </Text>
           </Flex>
         </Flex>
       </Td>
-      <Td>
-        <Text>{data}
-        </Text>
-        </Td>
     </Tr>
   );
 }
