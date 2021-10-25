@@ -7,13 +7,7 @@ import InternationalExposure from "views/Dashboard/InternationalExposure";
 import Extracurricular from "views/Dashboard/Extracurricular";
 import FacultyFeedback from "views/Dashboard/FacultyFeedback";
 import Profile from "views/Dashboard/Profile.js";
-import SignIn from "views/Pages/SignIn.js";
-import GeneralInformationdata from "views/Pages/GeneralInformationdata";
-import Academicsdata from "views/Pages/Academicdata";
-import ProfessionalDevelopmentdata from "views/Pages/ProfessionalDevelopmentData";
-import InternationalData from "views/Pages/InternationalData";
-import ExtraCurricularData from "views/Pages/ExtraCurricularData";
-import Feedbackdata from "views/Pages/Feedbackdata";
+
 import {
   HomeIcon,
   StatsIcon,
@@ -22,8 +16,6 @@ import {
   DocumentIcon,
   RocketIcon,
 } from "components/Icons/Icons";
-import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
-import AcademicsDataEdit from "views/Pages/Edit/AcademicsDataEdit";
 
 var dashRoutes = [
   {
@@ -109,186 +101,12 @@ var dashRoutes = [
     layout: "/admin",
   },
   {
-    name: "TEST PAGES",
-    category: "account",
-    state: "pageCollapse",
-    views: [
-      {
-        path: "/GeneralInformationdata",
-        name: (
-          <p
-            style={{
-              textAlign: "left",
-              lineHeight: "1.2rem",
-              whiteSpace: "normal",
-              wordWrap: "break-word",
-            }}
-          >
-            General Information Data
-          </p>
-        ),
-        icon: <StatsIcon color="inherit" />,
-        component: GeneralInformationdata,
-        layout: "/admin",
-      },
-
-      {
-        path: "/Academicsdata",
-        name: (
-          <p
-            style={{
-              textAlign: "left",
-              lineHeight: "1.2rem",
-              whiteSpace: "normal",
-              wordWrap: "break-word",
-            }}
-          >
-            Academics Data
-          </p>
-        ),
-        icon: <StatsIcon color="inherit" />,
-        component: Academicsdata,
-        layout: "/admin",
-      },
-      {
-        path: "/ProfessionalDevelopmentdata",
-        name: (
-          <p
-            style={{
-              textAlign: "left",
-              lineHeight: "1.2rem",
-              whiteSpace: "normal",
-              wordWrap: "break-word",
-            }}
-          >
-            Professional Development Data
-          </p>
-        ),
-        icon: <StatsIcon color="inherit" />,
-        component: ProfessionalDevelopmentdata,
-        layout: "/admin",
-      },
-      {
-        path: "/InternationalData",
-        name: (
-          <p
-            style={{
-              textAlign: "left",
-              lineHeight: "1.2rem",
-              whiteSpace: "normal",
-              wordWrap: "break-word",
-            }}
-          >
-            International Exposure Data
-          </p>
-        ),
-        icon: <StatsIcon color="inherit" />,
-        component: InternationalData,
-        layout: "/admin",
-      },
-      {
-        path: "/ExtracurricularData",
-        name: (
-          <p
-            style={{
-              textAlign: "left",
-              lineHeight: "1.2rem",
-              whiteSpace: "normal",
-              wordWrap: "break-word",
-            }}
-          >
-            ExtraCurricular Data
-          </p>
-        ),
-        icon: <StatsIcon color="inherit" />,
-        component: ExtraCurricularData,
-        layout: "/admin",
-      },
-      {
-        path: "/Feedbackdata",
-        name: (
-          <p
-            style={{
-              textAlign: "left",
-              lineHeight: "1.2rem",
-              whiteSpace: "normal",
-              wordWrap: "break-word",
-            }}
-          >
-            Faculty Feedback and Analysis
-          </p>
-        ),
-        icon: <StatsIcon color="inherit" />,
-        component: Feedbackdata,
-        layout: "/admin",
-      },
-    ],
-  },
-  {
-    name: "TEST EDIT PAGES",
-    category: "account",
-    state: "pageCollapse",
-    views: [
-      {
-        path: "/GeneralInformationDataEdit",
-        name: (
-          <p
-            style={{
-              textAlign: "left",
-              lineHeight: "1.2rem",
-              whiteSpace: "normal",
-              wordWrap: "break-word",
-            }}
-          >
-            General Information Data Edit
-          </p>
-        ),
-        icon: <StatsIcon color="inherit" />,
-        component: GeneralInformationDataEdit,
-        layout: "/admin",
-      },
-      {
-        path: "/AcademicsDataEdit",
-        name: (
-          <p
-            style={{
-              textAlign: "left",
-              lineHeight: "1.2rem",
-              whiteSpace: "normal",
-              wordWrap: "break-word",
-            }}
-          >
-            Academics Data Edit
-          </p>
-        ),
-        icon: <StatsIcon color="inherit" />,
-        component: AcademicsDataEdit,
-        layout: "/admin",
-      },
-    ],
-  },
-
-  {
-    name: "ACCOUNT PAGES",
-    category: "account",
-    state: "pageCollapse",
-    views: [
-      {
-        path: "/profile",
-        name: "Profile",
-        icon: <PersonIcon color="inherit" />,
-        secondaryNavbar: true,
-        component: Profile,
-        layout: "/admin",
-      },
-      {
-        path: "/signin",
-        name: "Sign In",
-        icon: <DocumentIcon color="inherit" />,
-        component: SignIn,
-        layout: "/auth",
-      },
-    ],
+    path: "/profile",
+    name: "Profile",
+    icon: <PersonIcon color="inherit" />,
+    secondaryNavbar: true,
+    component: Profile,
+    layout: "/admin",
   },
 ];
 export default dashRoutes;
