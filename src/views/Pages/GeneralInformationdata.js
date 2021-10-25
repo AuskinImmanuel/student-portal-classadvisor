@@ -40,6 +40,10 @@ import { ProfessionalMembership } from "variables/general";
 import GeneralParticularstablerowedit from "components/Tables/EditTables/GeneralInformationTableRowEdit";
 
 function GeneralInformationdata({ location }) {
+  function newReload() {
+    window.location.href =
+      "http://localhost:3000/admin#/admin/GeneralInformationDataEdit";
+  }
   const [data, setData] = useState([]);
 
   let params = new URLSearchParams();
@@ -2308,7 +2312,7 @@ function GeneralInformationdata({ location }) {
         <Card>
           <CardBody>
             <Button
-              onClick={"/GeneralParticularstablerowedit"}
+              onClick={newReload}
               colorScheme="orange"
               variant="solid"
               width="100%"
