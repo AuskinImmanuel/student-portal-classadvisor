@@ -142,55 +142,93 @@ function InternationalTableRow(props) {
             <ModalHeader>Edit Details</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <Text>Campus name</Text>
-              <Input
-                borderRadius="5px"
-                fontSize="sm"
-                type="text"
-                placeholder={row1}
-                id="ECID"
-              />
-              <Input
-                marginTop="1em"
-                borderRadius="5px"
-                fontSize="sm"
-                type="text"
-                placeholder={row2}
-                id="EDID"
-              />
-              <Input
-                marginTop="1em"
-                borderRadius="5px"
-                fontSize="sm"
-                type="text"
-                placeholder={row3}
-                id="EPID"
-              />
-              <Input
-                marginTop="1em"
-                borderRadius="5px"
-                fontSize="sm"
-                type="text"
-                placeholder={row4}
-                id="EOID"
-              />
-              <Input
-                marginTop="1em"
-                borderRadius="5px"
-                fontSize="sm"
-                type="text"
-                placeholder={row5}
-                id="EPDID"
-              />
-              <Input
-                marginTop="1em"
-                borderRadius="5px"
-                fontSize="sm"
-                type="text"
-                placeholder={row6}
-                id="EFID"
-              />
+              <Tr>
+                <Td>
+                  <Text m="2em">Campus name</Text>
+                </Td>
+                <Td>
+                  <Input
+                    borderRadius="5px"
+                    fontSize="sm"
+                    type="text"
+                    placeholder={row1}
+                    id="ECID"
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Td>
+                  <Text m="2em">Date and Year</Text>
+                </Td>
+                <Td>
+                  <Input
+                    borderRadius="5px"
+                    fontSize="sm"
+                    type="text"
+                    placeholder={row2}
+                    id="EDID"
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Td>
+                  <Text m="2em">Date and Year</Text>
+                </Td>
+
+                <Td>
+                  <Input
+                    borderRadius="5px"
+                    fontSize="sm"
+                    type="text"
+                    placeholder={row3}
+                    id="EPID"
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Td>
+                  <Text m="2em">Date and Year</Text>
+                </Td>
+                <Td>
+                  <Input
+                    borderRadius="5px"
+                    fontSize="sm"
+                    type="text"
+                    placeholder={row4}
+                    id="EOID"
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Td>
+                  <Text m="2em">Date and Year</Text>
+                </Td>
+                <Td>
+                  <Input
+                    borderRadius="5px"
+                    fontSize="sm"
+                    type="text"
+                    placeholder={row5}
+                    id="EPDID"
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Td>
+                  <Text m="2em">Date and Year</Text>
+                </Td>
+                <Td>
+                  <Input
+                    borderRadius="5px"
+                    fontSize="sm"
+                    type="text"
+                    placeholder={row6}
+                    id="EFID"
+                  />
+                </Td>
+              </Tr>
             </ModalBody>
+
             <ModalFooter>
               <Button
                 colorScheme="blue"
