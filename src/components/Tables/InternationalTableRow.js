@@ -222,6 +222,7 @@ function InternationalTableRow(props) {
           bg="orange.300"
           alignSelf="flex-end"
           width="fit-content"
+          disabled={{ row7 }.row7 == "Verified" ? true : false}
         >
           Verify
         </Button>
