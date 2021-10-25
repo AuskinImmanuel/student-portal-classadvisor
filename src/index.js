@@ -4,7 +4,7 @@ import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import AuthLayout from "layouts/Auth.js";
 import AdminLayout from "layouts/Admin.js";
-import "./Style/Style.scss";
+import "./components/Style/Style.scss";
 
 ReactDOM.render(
   <HashRouter name="">

@@ -207,7 +207,7 @@ function InternationalTableRow(props) {
       </Button>
       </Td>
       <Td>
-      <Button onClick={funverify} bg="orange.300" alignSelf="flex-end" width="fit-content" disabled={show}>
+      <Button onClick={funverify} bg="orange.300" alignSelf="flex-end" width="fit-content" disabled={({row7}=="Verified")? false : true}>
             Verify
       </Button>
       </Td>
