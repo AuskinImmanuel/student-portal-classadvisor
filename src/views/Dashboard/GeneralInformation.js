@@ -39,6 +39,7 @@ function GeneralInformation() {
   const inputBg = useColorModeValue("white", "gray.800");
   const mainorange = useColorModeValue("orange.300", "orange.300");
   const searchIconColor = useColorModeValue("gray.700", "gray.200");
+
   return (
     <Flex direction="column" pt={{ base: "120px", md: "75px" }}>
       <Card mb="1rem">
@@ -49,66 +50,64 @@ function GeneralInformation() {
             </Text>
           </Flex>
         </CardBody>
-        <Card>
-          <CardHeader>
-            <Text fontSize="lg" color={textColor} fontWeight="semi">
-              Search Student
-            </Text>
-          </CardHeader>
 
-          <InputGroup
-            bg={inputBg}
-            mt="1rem"
-            borderRadius="15px"
-            w="cover"
-            _focus={{
-              borderColor: { mainorange },
-            }}
-            _active={{
-              borderColor: { mainorange },
-            }}
-          >
-            <InputLeftElement
-              children={
-                <IconButton
-                  bg="inherit"
-                  borderRadius="inherit"
-                  _hover="none"
-                  _active={{
-                    bg: "inherit",
-                    transform: "none",
-                    borderColor: "transparent",
-                  }}
-                  _focus={{
-                    boxShadow: "none",
-                  }}
-                  icon={
-                    <SearchIcon color={searchIconColor} w="15px" h="15px" />
-                  }
-                ></IconButton>
-              }
-            />
+        <CardHeader mt="1em">
+          <Text fontSize="lg" color={textColor} fontWeight="semi">
+            Search Student
+          </Text>
+        </CardHeader>
 
-            <Input
-              onChange={(event) => setSearchTerm(event.target.value)}
-              fontSize="xs"
-              py="11px"
-              placeholder="Type here..."
-              borderRadius="inherit"
-              value={searchTerm}
-            />
-          </InputGroup>
-          <br />
-          <Button
-            onClick="m"
-            colorScheme="orange"
-            alignSelf="flex-end"
-            variant="solid"
-            width="25%"
-          >
-            Download Report
-          </Button>
-        </Card>
+        <InputGroup
+          bg={inputBg}
+          mt="1rem"
+          borderRadius="15px"
+          w="cover"
+          _focus={{
+            borderColor: { mainorange },
+          }}
+          _active={{
+            borderColor: { mainorange },
+          }}
+        >
+          <InputLeftElement
+            children={
+              <IconButton
+                bg="inherit"
+                borderRadius="inherit"
+                _hover="none"
+                _active={{
+                  bg: "inherit",
+                  transform: "none",
+                  borderColor: "transparent",
+                }}
+                _focus={{
+                  boxShadow: "none",
+                }}
+                icon={<SearchIcon color={searchIconColor} w="15px" h="15px" />}
+              ></IconButton>
+            }
+          />
+
+          <Input
+            onChange={(event) => setSearchTerm(event.target.value)}
+            fontSize="xs"
+            py="11px"
+            placeholder="Type here..."
+            borderRadius="inherit"
+            value={searchTerm}
+          />
+        </InputGroup>
+
+        <Button
+          mt="1em"
+          onClick="m"
+          colorScheme="orange"
+          alignSelf="flex-end"
+          variant="solid"
+          width="25%"
+        >
+          Download Report
+        </Button>
       </Card>
 
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>

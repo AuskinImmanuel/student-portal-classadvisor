@@ -66,7 +66,7 @@ function InternationalData() {
                   <Th color="gray.400">Verify Status</Th>
                   <Th color="gray.400">Edit</Th>
                   <Th color="gray.400">Delete</Th>
-                  <Th color="gray.400">Verifie</Th>
+                  <Th color="gray.400">Verify</Th>
                 </Tr>
               </Thead>
 
