@@ -103,8 +103,9 @@ function InternationalExposure() {
             value={searchTerm}
           />
         </InputGroup>
-        <br />
+
         <Button
+          mt="1em"
           onClick="m"
           colorScheme="orange"
           alignSelf="flex-end"

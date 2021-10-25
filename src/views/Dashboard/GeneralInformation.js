@@ -50,13 +50,11 @@ function GeneralInformation() {
             </Text>
           </Flex>
         </CardBody>
-
         <CardHeader mt="1em">
           <Text fontSize="lg" color={textColor} fontWeight="semi">
             Search Student
           </Text>
         </CardHeader>
-
         <InputGroup
           bg={inputBg}
           mt="1rem"

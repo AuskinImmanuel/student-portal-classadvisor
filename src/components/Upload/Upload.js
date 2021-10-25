@@ -64,12 +64,12 @@ function Upload(event) {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Flex direction="column" pt={{ base: "1rem", md: ".5rem" }}>
-      <SimpleGrid mt="1em" columns={{ sm: 1, md: 2, xl: 2 }} gap={5}>
+    <Flex direction="column">
+      <SimpleGrid columns={{ sm: 1, md: 2, xl: 2 }} gap={5}>
         <a href={MyPDF} download="academic_details.xlsx">
           <Button colorScheme="orange" variant="solid" width="100%">
             Download Template
-          </Button>{" "}
+          </Button>
         </a>
 
         <Button

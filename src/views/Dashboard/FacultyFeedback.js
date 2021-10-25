@@ -10,12 +10,13 @@ import {
   Thead,
   Tr,
   useColorModeValue,
-  FormControl,
-  FormLabel,
-  Select,
-  SimpleGrid,
+  IconButton,
   Button,
+  Input,
+  InputGroup,
+  InputLeftElement,
 } from "@chakra-ui/react";
+import { SearchIcon } from "@chakra-ui/icons";
 // Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
@@ -26,6 +27,8 @@ import StudentListFacultyFeedback from "components/Tables/StudentListFacultyFeed
 
 function FacultyFeedback() {
   const [data, setData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
   useEffect(async () => {
     axios.get("http://localhost:5000/General").then((items) => {
       setData(items.data);
@@ -33,6 +36,9 @@ function FacultyFeedback() {
     });
   }, []);
   const textColor = useColorModeValue("gray.700", "white");
+  const inputBg = useColorModeValue("white", "gray.800");
+  const mainorange = useColorModeValue("orange.300", "orange.300");
+  const searchIconColor = useColorModeValue("gray.700", "gray.200");
 
   return (
     <Flex direction="column" pt={{ base: "120px", md: "75px" }}>
@@ -42,21 +48,64 @@ function FacultyFeedback() {
             <Text fontSize="xl" color={textColor} fontWeight="bold" mr="auto">
               Faculty Feedback
             </Text>
-            <Card>
-              <CardHeader>Searh Student</CardHeader>
-              <SearchBar />
-              <br />
-              <Button
-                colorScheme="orange"
-                alignSelf="flex-end"
-                variant="solid"
-                width="25%"
-              >
-                Download
-              </Button>
-            </Card>
           </Flex>
         </CardBody>
+        <CardHeader mt="1em">
+          <Text fontSize="lg" color={textColor} fontWeight="semi">
+            Search Student
+          </Text>
+        </CardHeader>
+        <InputGroup
+          bg={inputBg}
+          mt="1rem"
+          borderRadius="15px"
+          w="cover"
+          _focus={{
+            borderColor: { mainorange },
+          }}
+          _active={{
+            borderColor: { mainorange },
+          }}
+        >
+          <InputLeftElement
+            children={
+              <IconButton
+                bg="inherit"
+                borderRadius="inherit"
+                _hover="none"
+                _active={{
+                  bg: "inherit",
+                  transform: "none",
+                  borderColor: "transparent",
+                }}
+                _focus={{
+                  boxShadow: "none",
+                }}
+                icon={<SearchIcon color={searchIconColor} w="15px" h="15px" />}
+              ></IconButton>
+            }
+          />
+
+          <Input
+            onChange={(event) => setSearchTerm(event.target.value)}
+            fontSize="xs"
+            py="11px"
+            placeholder="Type here..."
+            borderRadius="inherit"
+            value={searchTerm}
+          />
+        </InputGroup>
+
+        <Button
+          mt="1em"
+          onClick="m"
+          colorScheme="orange"
+          alignSelf="flex-end"
+          variant="solid"
+          width="25%"
+        >
+          Download Report
+        </Button>
       </Card>
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
         <CardHeader p="6px 0px 22px 0px">
@@ -79,17 +128,38 @@ function FacultyFeedback() {
               </Tr>
             </Thead>
             <Tbody>
-              {data.map((item) => {
-                return (
-                  <StudentListFacultyFeedback
-                    roll={item.roll_no}
-                    name={item.sname}
-                    reg={item.reg_no}
-                    batch={item.batch}
-                    email={item.licet_email}
-                  />
-                );
-              })}
+              {data
+                .filter((item) => {
+                  if (searchTerm == "") {
+                    return item;
+                  } else if (
+                    item.sname
+                      .toLowerCase()
+                      .includes(searchTerm.toLocaleLowerCase()) ||
+                    item.roll_no
+                      .toLowerCase()
+                      .includes(searchTerm.toLocaleLowerCase()) ||
+                    item.batch
+                      .toLowerCase()
+                      .includes(searchTerm.toLocaleLowerCase()) ||
+                    item.reg_no
+                      .toLowerCase()
+                      .includes(searchTerm.toLocaleLowerCase())
+                  ) {
+                    return item;
+                  }
+                })
+                .map((item) => {
+                  return (
+                    <StudentListFacultyFeedback
+                      roll={item.roll_no}
+                      name={item.sname}
+                      reg={item.reg_no}
+                      batch={item.batch}
+                      email={item.licet_email}
+                    />
+                  );
+                })}
             </Tbody>
           </Table>
         </CardBody>

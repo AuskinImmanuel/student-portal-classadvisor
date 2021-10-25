@@ -59,6 +59,7 @@ function Academics() {
         <InputGroup
           bg={inputBg}
           mt="1rem"
+          mb="1rem"
           borderRadius="15px"
           w="cover"
           _focus={{
@@ -96,7 +97,6 @@ function Academics() {
             value={searchTerm}
           />
         </InputGroup>
-
         <Upload />
       </Card>
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
