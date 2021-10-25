@@ -14,6 +14,7 @@ import {
   Switch,
   Text,
   useColorModeValue,
+  Image,
 } from "@chakra-ui/react";
 import handleLogin from "../../controller/UserloginCtrl";
 // Assets
@@ -22,8 +23,8 @@ import signInImage from "assets/img/signInImage.png";
 function login(e) {
   e.preventDefault();
   console.log(document.getElementById("emailId").value);
-z}
-
+  z;
+}
 
 function SignIn() {
   const titleColor = useColorModeValue("orange.300", "orange.200");
@@ -43,21 +44,12 @@ function SignIn() {
           display={{ base: "none", md: "block" }}
           overflowX="hidden"
           h="100%"
-          w="40vw"
-          paddingTop="10rem"
+          w="40%"
+          paddingTop="13rem"
           position="absolute"
           right="0px"
         >
-          <Box
-            bgImage={signInImage}
-            w="60%"
-            h="60%"
-            bgSize="300px 300px"
-            bgRepeat="no-repeat"
-            bgPosition="50%"
-            position="absolute"
-            borderBottomLeftRadius="20px"
-          ></Box>
+          <Image src={signInImage} alt="Segun Adebayo" />
         </Box>
         <Flex
           alignItems="center"
@@ -83,7 +75,7 @@ function SignIn() {
                 fontWeight="bold"
                 fontSize="14px"
               >
-                Enter your email and password to sign in
+                Enter your email and password to log in
               </Text>
               <FormControl>
                 <FormLabel ms="4px" fontSize="sm" fontWeight="normal">

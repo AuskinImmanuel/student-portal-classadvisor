@@ -131,7 +131,7 @@ export const GeneralParticulars = [
     data: "NULL",
   },
   {
-    field: "row5 Register No.",
+    field: "Register No.",
     data: "NULL",
   },
   {
