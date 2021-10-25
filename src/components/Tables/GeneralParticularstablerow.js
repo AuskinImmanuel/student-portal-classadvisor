@@ -11,7 +11,7 @@ import {
 import React from "react";
 
 function GeneralParticularstablerow(props) {
-  const { field, data } = props;
+  const { data } = props;
   const textColor = useColorModeValue("gray.700", "white");
   const bgStatus = useColorModeValue("gray.400", "#1a202c");
   const colorStatus = useColorModeValue("white", "gray.400");

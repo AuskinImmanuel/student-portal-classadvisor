@@ -51,7 +51,7 @@ function InternationalData() {
               Summer Program
             </Text>
           </CardHeader>
-          <CardBody>
+          <CardBody overflowX={{ sm: "scroll" }}>
             <Table variant="simple" color={textColor}>
               <Thead>
                 <Tr my=".8rem" pl="0px" color="gray.400">
@@ -66,6 +66,7 @@ function InternationalData() {
                   <Th color="gray.400">Verify Status</Th>
                   <Th color="gray.400">Edit</Th>
                   <Th color="gray.400">Delete</Th>
+                  <Th color="gray.400">Verifie</Th>
                 </Tr>
               </Thead>
 
