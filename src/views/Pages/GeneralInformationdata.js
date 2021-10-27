@@ -42,7 +42,7 @@ import GeneralParticularstablerowedit from "components/Tables/EditTables/General
 function GeneralInformationdata({ location }) {
   function newReload() {
     window.location.href =
-      "http://localhost:3000/admin#/admin/GeneralInformationDataEdit";
+      "http://localhost:3000/class-advisor-portal#/admin/GeneralInformationDataEdit";
   }
   const [data, setData] = useState([]);
 

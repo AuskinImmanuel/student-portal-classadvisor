@@ -28,7 +28,8 @@ function StudentListInternational(props) {
       minWidth="100%"
       onClick={() => {
         localStorage.setItem("International", roll);
-        window.location.href = "http://localhost:3000/admin#/admin/InternationalData";
+        window.location.href =
+          "http://localhost:3000/class-advisor-portal#/admin/InternationalData";
       }}
       id={roll}
       _hover={{

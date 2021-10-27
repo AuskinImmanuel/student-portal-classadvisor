@@ -31,7 +31,7 @@ function StudentListAcademic(props) {
         let params = new URLSearchParams();
         params.append("RollNumber", localStorage.getItem("generalStudent"));
         window.location.href =
-          "http://localhost:3000/admin#/admin/Academicsdata";
+          "http://localhost:3000/class-advisor-portal#/admin/Academicsdata";
       }}
       id={roll}
       _hover={{

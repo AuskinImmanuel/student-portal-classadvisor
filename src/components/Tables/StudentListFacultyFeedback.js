@@ -31,7 +31,7 @@ function StudentListFacultyFeedback(props) {
         let params = new URLSearchParams();
         params.append("RollNumber", localStorage.getItem("generalStudent"));
         window.location.href =
-          "http://localhost:3000/admin#/admin/Feedbackdata";
+          "http://localhost:3000/class-advisor-portal#/admin/Feedbackdata";
       }}
       id={roll}
       _hover={{

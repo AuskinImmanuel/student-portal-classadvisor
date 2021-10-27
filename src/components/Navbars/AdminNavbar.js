@@ -116,7 +116,7 @@ export default function AdminNavbar(props) {
           <Breadcrumb>
             <BreadcrumbItem color={mainText}>
               <BreadcrumbLink
-                href="http://localhost:3000/admin#/admin/dashboard"
+                href="http://localhost:3000/class-advisor-portal/admin#/admin/dashboard"
                 color={secondaryText}
               >
                 Class Advisor
