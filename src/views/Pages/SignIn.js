@@ -15,20 +15,39 @@ import {
   Text,
   useColorModeValue,
   Image,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from "@chakra-ui/react";
 import handleLogin from "../../controller/UserloginCtrl";
 // Assets
 import signInImage from "assets/img/signInImage.png";
 
-function login(e) {
-  e.preventDefault();
-  console.log(document.getElementById("emailId").value);
-  z;
-}
+// function login(e) {
+//   e.preventDefault();
+//   console.log(document.getElementById("emailId").value);
+//   z;
+// }
 
 function SignIn() {
   const titleColor = useColorModeValue("orange.300", "orange.200");
   const textColor = useColorModeValue("gray.400", "white");
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  localStorage.removeItem("password");
+  // localStorage.clear();
+  function passcheck(){
+  if(localStorage.getItem("password")=="fail"){
+    
+  {onOpen()}
+                  
+}
+}
+  
   return (
     <Flex position="relative" mb="40px">
       <Flex
@@ -67,7 +86,8 @@ function SignIn() {
             <Heading color={titleColor} fontSize="32px" mb="10px">
               Welcome Back
             </Heading>
-            <form onSubmit={login}>
+        
+            <form>
               <Text
                 mb="36px"
                 ms="4px"
@@ -112,6 +132,7 @@ function SignIn() {
                   <Text color="red" id="email-fail" display="none">
                     Incorrect Username
                   </Text>
+                  
                   <Text color="red" id="pass-fail" display="none">
                     Incorrect Password
                   </Text>
@@ -121,7 +142,7 @@ function SignIn() {
                 </Flex>
                 <Button
                   fontSize="1rem"
-                  type="submit"
+                 
                   bg="orange.300"
                   w="100%"
                   h="45"
@@ -135,10 +156,27 @@ function SignIn() {
                     bg: "orange.400",
                   }}
                   id="login_btn"
-                  onClick={handleLogin}
+                  onClick={()=>{handleLogin();passcheck();}}
                 >
                   SIGN IN
                 </Button>
+                
+                <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Error!</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <h1 >Incorrect password entered</h1> 
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              Retry
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
               </FormControl>
             </form>
           </Flex>
