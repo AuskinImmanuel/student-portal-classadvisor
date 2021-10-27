@@ -20,6 +20,9 @@ export default function handleLogin() {
         loginButton.innerHTML = `Login`;
       } else if (result.data === "pass-fail") {
         console.log("Incorrect password");
+        var pass="fail";
+        localStorage.setItem("password",pass);
+     //   window.location.href="http://localhost:3000/#/auth/SignIn";
     //    document.getElementById("pass-fail").classList.remove("d-none");
     //    document.getElementById("email-fail").classList.add("d-none");
     //    document.getElementById("server-fail").classList.add("d-none");
@@ -36,6 +39,8 @@ export default function handleLogin() {
     //    document.getElementById("email-fail").classList.add("d-none");
     //    document.getElementById("server-fail").classList.add("d-none");
         console.log("Logged In");
+        var pass="success";
+        localStorage.setItem("password",pass);
         window.location.href="http://localhost:3000/public/Template/academic_details.xlsx#/admin/dashboard";
         localStorage.setItem("email", result.data[0].email);
         localStorage.setItem("auth_token", result.data[0].auth_token);
