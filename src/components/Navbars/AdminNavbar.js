@@ -119,7 +119,7 @@ export default function AdminNavbar(props) {
                 href="http://localhost:3000/class-advisor-portal/admin#/admin/dashboard"
                 color={secondaryText}
               >
-                Class Advisor
+                Attendance
               </BreadcrumbLink>
             </BreadcrumbItem>
 

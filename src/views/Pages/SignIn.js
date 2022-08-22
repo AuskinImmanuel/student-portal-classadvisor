@@ -21,12 +21,14 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
-import handleLogin from "../../controller/UserloginCtrl";
 // Assets
 import signInImage from "assets/img/signInImage.png";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function SignIn() {
+  localStorage.clear();
+  const history = useHistory();
   const titleColor = useColorModeValue("orange.300", "orange.200");
   const textColor = useColorModeValue("gray.400", "white");
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -42,11 +44,16 @@ function SignIn() {
     else{
       let res = null
       try {
-        res = await axios("http://localhost:5000/login", "POST", {
+        res = await axios.post('http://localhost:5000/login', {
           email,
           password, 
-        });
+        })
+        localStorage.setItem("token", res.data.auth_token);
+        localStorage.setItem("email", res.data.email);
+        localStorage.setItem("name", res.data.name);
+        history.push("/admin/dashboard")
       } catch (err) {
+          console.log(err);
           if (res == null && err.response == undefined) {
             document.getElementById("result").innerHTML = "Server Down";
           }

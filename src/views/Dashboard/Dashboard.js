@@ -71,16 +71,33 @@ export default function Dashboard() {
 
   return (
     <Flex flexDirection="column" pt={{ base: "500px", md: "75px" }}>
-      <SimpleGrid columns={{ sm: 1, md: 2, xl: 2 }} spacing="24px">
-        <Card minH="300px">
+     <Text
+        mb="15px"
+        ms="4px"
+        color={textColor}
+        fontWeight="bold"
+        fontSize="14px"
+      >Ongoing Classes</Text>
+      <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} spacing="24px">
+          <div style={{width:"25%",cursor:"pointer"}}>
+          <Card minH="100px">
           <CardBody>
-            <Flex
+            {/* <Flex
               flexDirection="column"
               align="center"
               justify="center"
               w="100%"
-            >
-              <Stat mr="auto">
+            > */}
+            <Text
+                mb="36px"
+                ms="4px"
+                color={textColor}
+                fontWeight="bold"
+                fontSize="14px"
+              >
+                Course Name
+              </Text>
+              {/* <Stat mr="auto">
                 <StatLabel
                   fontSize="sm"
                   color="gray.400"
@@ -90,37 +107,24 @@ export default function Dashboard() {
                   Academic Results
                 </StatLabel>
               </Stat>
-              <BarChart />
-            </Flex>
+              <BarChart /> */}
+            {/* </Flex> */}
           </CardBody>
         </Card>
-
-        <Card minH="300px">
-          <CardBody>
-            <Flex
-              flexDirection="column"
-              align="center"
-              justify="center"
-              w="100%"
-            >
-              <Stat mr="auto">
-                <StatLabel
-                  fontSize="sm"
-                  color="gray.400"
-                  fontWeight="bold"
-                  pb=".1rem"
-                >
-                  Placement Statistics
-                </StatLabel>
-              </Stat>
-              <Box w="100%" h={{ sm: "225px" }} ps="8px">
-                <LineChart />
-              </Box>
-            </Flex>
-          </CardBody>
-        </Card>
-
-        <Card minH="300px">
+          </div>
+          
+          <Text
+                mb="36px"
+                ms="4px"
+                color={textColor}
+                fontWeight="bold"
+                fontSize="14px"
+              >
+                Upcoming Classes
+            </Text>      
+        
+        
+        {/* <Card minH="300px">
           <CardBody>
             <Flex
               flexDirection="column"
@@ -143,9 +147,9 @@ export default function Dashboard() {
               </Box>
             </Flex>
           </CardBody>
-        </Card>
+        </Card> */}
 
-        <Card minH="300px">
+        {/* <Card minH="300px">
           <CardBody>
             <Flex
               flexDirection="column"
@@ -166,7 +170,7 @@ export default function Dashboard() {
               <BarChart />
             </Flex>
           </CardBody>
-        </Card>
+        </Card> */}
       </SimpleGrid>
     </Flex>
   );
