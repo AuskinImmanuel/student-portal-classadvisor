@@ -84,9 +84,8 @@ function SignIn() {
             mt={{ md: "150px", lg: "80px" }}
           >
             <Heading color={titleColor} fontSize="32px" mb="10px">
-              Welcome Back
+              Attendance Portal
             </Heading>
-        
             <form>
               <Text
                 mb="36px"
