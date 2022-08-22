@@ -8,10 +8,7 @@ import {
   FormControl,
   FormLabel,
   Heading,
-  Router,
   Input,
-  Link,
-  Switch,
   Text,
   useColorModeValue,
   Image,
@@ -27,12 +24,7 @@ import {
 import handleLogin from "../../controller/UserloginCtrl";
 // Assets
 import signInImage from "assets/img/signInImage.png";
-
-// function login(e) {
-//   e.preventDefault();
-//   console.log(document.getElementById("emailId").value);
-//   z;
-// }
+import axios from "axios";
 
 function SignIn() {
   const titleColor = useColorModeValue("orange.300", "orange.200");
@@ -40,13 +32,30 @@ function SignIn() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   localStorage.removeItem("password");
   // localStorage.clear();
-  function passcheck(){
-  if(localStorage.getItem("password")=="fail"){
-    
-  {onOpen()}
-                  
-}
-}
+  async function passcheck(){
+    document.getElementById("result").innerHTML = "";
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("pass").value;
+    if(email=='' || password==''){
+      document.getElementById("result").innerHTML = "Required Email and Password";
+    }
+    else{
+      let res = null
+      try {
+        res = await axios("http://localhost:5000/login", "POST", {
+          email,
+          password, 
+        });
+      } catch (err) {
+          if (res == null && err.response == undefined) {
+            document.getElementById("result").innerHTML = "Server Down";
+          }
+          else{
+            document.getElementById("result").innerHTML = err.response.data;
+          }
+      }
+    }
+  }
   
   return (
     <Flex position="relative" mb="40px">
@@ -105,7 +114,7 @@ function SignIn() {
                   mb="24px"
                   fontSize="sm"
                   type="text"
-                  id="emailId"
+                  id="email"
                   placeholder="Your email adress"
                   size="lg"
                 />
@@ -116,7 +125,7 @@ function SignIn() {
                   borderRadius="15px"
                   mb="20px"
                   fontSize="sm"
-                  id="password"
+                  id="pass"
                   type="password"
                   placeholder="Your password"
                   size="lg"
@@ -128,15 +137,7 @@ function SignIn() {
                   maxW="100%"
                   mt="0px"
                 >
-                  <Text color="red" id="email-fail" display="none">
-                    Incorrect Username
-                  </Text>
-                  
-                  <Text color="red" id="pass-fail" display="none">
-                    Incorrect Password
-                  </Text>
-                  <Text color="red" id="serror-fail" display="none">
-                    Server Error. Try again after some time
+                  <Text color="red" id="result">
                   </Text>
                 </Flex>
                 <Button
@@ -155,7 +156,7 @@ function SignIn() {
                     bg: "orange.400",
                   }}
                   id="login_btn"
-                  onClick={()=>{handleLogin();passcheck();}}
+                  onClick={()=>{passcheck();}}
                 >
                   SIGN IN
                 </Button>
