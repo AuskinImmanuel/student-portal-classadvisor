@@ -11,7 +11,7 @@ import {
   Tr,
   useColorModeValue,
   FormControl,
-  FormLabel,
+  Button,
   FormErrorMessage,
   FormHelperText,
   Select,
@@ -25,10 +25,23 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import ExtraCurricualarTableRow from "components/Tables/ProfessionalDevelopmentTablerow";
 import { Clubs } from "variables/general";
-
+import { Checkbox, CheckboxGroup } from '@chakra-ui/react'
 
 function ExtraCurricularData() {
+  function submit() {
+    var email = localStorage.getItem("email")
+    var auth_token = localStorage.getItem("token")
+    var data = JSON.stringify([present])
+    axios.post("http://localhost:5000/attendance", {
+      email,
+      auth_token,
+      data
+    })
+  }
+
   const [data, setdata] = useState([])
+  const [present, setpresent] = useState({})
+
   useEffect(async () => {
     var email = localStorage.getItem("email")
     var auth_token = localStorage.getItem("token")
@@ -43,6 +56,9 @@ function ExtraCurricularData() {
       year,
       sem
     }).then((items) => {
+      for (let i = 0; i < items.data.length; i++) {
+        present[items.data[i].register_no] = 0        
+      }
       setdata(items.data);
     });
   }, [])
@@ -67,6 +83,7 @@ function ExtraCurricularData() {
                     <Th color="gray.400">Register No</Th>
                     <Th color="gray.400">Roll No</Th>
                     <Th color="gray.400">Departemnt</Th>
+                    <Th color="gray.400">Present/Absent</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
@@ -77,6 +94,14 @@ function ExtraCurricularData() {
                          <Th color="white.100">{items.register_no}</Th>
                          <Th color="white.100">{items.roll_no}</Th>
                          <Th color="white.100">{items.dept}</Th>
+                         <Th><Checkbox onChange={(e)=>{
+                          if(e.target.checked === true) {
+                            present[items.register_no] = 1
+                          }
+                          if(e.target.checked === false) {
+                            present[items.register_no] = 0
+                          }
+                         }}></Checkbox></Th>
                       </Tr>
                     ))
                   ) : (<></>) }
@@ -85,6 +110,16 @@ function ExtraCurricularData() {
             </CardBody>
           </Card>
         </GridItem>
+        <Button
+          mt="1em"
+          colorScheme="orange"
+          alignSelf="flex-end"
+          variant="solid"
+          width="10%"
+          onClick={()=>{submit()}}
+        >
+          Submit
+        </Button>
       </Grid>
     </Flex>
   );
