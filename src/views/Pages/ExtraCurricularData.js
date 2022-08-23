@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 // Chakra imports
 import {
   Flex,
@@ -23,15 +24,29 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import ExtraCurricualarTableRow from "components/Tables/ProfessionalDevelopmentTablerow";
-import { IndustrialVist } from "variables/general";
-import { InplantTraining } from "variables/general";
-import { GuestLecture } from "variables/general";
 import { Clubs } from "variables/general";
-import { OutReachActivity } from "variables/general";
-import { SportsAchievements } from "variables/general";
-import { Culturals } from "variables/general";
+
 
 function ExtraCurricularData() {
+  const [data, setdata] = useState([])
+  useEffect(async () => {
+    var email = localStorage.getItem("email")
+    var auth_token = localStorage.getItem("token")
+    var dept = localStorage.getItem("dept")
+    var year = localStorage.getItem("year")
+    var sem = localStorage.getItem("sem")
+
+    axios.post("http://localhost:5000/getdetails", {
+      email,
+      auth_token,
+      dept,
+      year,
+      sem
+    }).then((items) => {
+      setdata(items.data);
+    });
+  }, [])
+
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
@@ -41,128 +56,30 @@ function ExtraCurricularData() {
           <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
             <CardHeader p="6px 0px 22px 0px">
               <Text fontSize="xl" color={textColor} fontWeight="bold">
-                Clubs
+                Attendance Upload
               </Text>
             </CardHeader>
             <CardBody>
               <Table variant="simple" color={textColor}>
                 <Thead>
                   <Tr my=".8rem" pl="0px" color="gray.400">
-                    <Th color="gray.400">Name Of The Club</Th>
-                    <Th color="gray.400">Activity</Th>
-                    <Th color="gray.400">Date & Year</Th>
-                    <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Student Name</Th>
+                    <Th color="gray.400">Register No</Th>
+                    <Th color="gray.400">Roll No</Th>
+                    <Th color="gray.400">Departemnt</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {Clubs.map((row) => {
-                    return (
-                      <ExtraCurricualarTableRow
-                        row1={row.row1}
-                        row2={row.row2}
-                        row3={row.row3}
-                        row4={row.row4}
-                      />
-                    );
-                  })}
-                </Tbody>
-              </Table>
-            </CardBody>
-          </Card>
-        </GridItem>
-        <GridItem>
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
-            <CardHeader p="6px 0px 22px 0px">
-              <Text fontSize="xl" color={textColor} fontWeight="bold">
-                Outreach Activity
-              </Text>
-            </CardHeader>
-            <CardBody>
-              <Table variant="simple" color={textColor}>
-                <Thead>
-                  <Tr my=".8rem" pl="0px" color="gray.400">
-                    <Th color="gray.400">Activity</Th>
-                    <Th color="gray.400">Date & Year</Th>
-                    <Th color="gray.400">Outcome</Th>
-                  </Tr>
-                </Thead>
-                <Tbody>
-                  {OutReachActivity.map((row) => {
-                    return (
-                      <ExtraCurricualarTableRow
-                        row1={row.row1}
-                        row2={row.row2}
-                        row3={row.row3}
-                      />
-                    );
-                  })}
-                </Tbody>
-              </Table>
-            </CardBody>
-          </Card>
-        </GridItem>
-        <GridItem>
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
-            <CardHeader p="6px 0px 22px 0px">
-              <Text fontSize="xl" color={textColor} fontWeight="bold">
-                Sports Achievements
-              </Text>
-            </CardHeader>
-            <CardBody>
-              <Table variant="simple" color={textColor}>
-                <Thead>
-                  <Tr my=".8rem" pl="0px" color="gray.400">
-                    <Th color="gray.400">Name Of The Sport</Th>
-                    <Th color="gray.400">
-                      Representation <br />
-                      (ZONES/DISTRICT/NATIONAL/INTER-NATIONAL)
-                    </Th>
-                    <Th color="gray.400">Position Secured</Th>
-                    <Th color="gray.400">Date & Year</Th>
-                  </Tr>
-                </Thead>
-                <Tbody>
-                  {SportsAchievements.map((row) => {
-                    return (
-                      <ExtraCurricualarTableRow
-                        row1={row.row1}
-                        row2={row.row2}
-                        row3={row.row3}
-                        row4={row.row4}
-                      />
-                    );
-                  })}
-                </Tbody>
-              </Table>
-            </CardBody>
-          </Card>
-        </GridItem>
-        <GridItem>
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
-            <CardHeader p="6px 0px 22px 0px">
-              <Text fontSize="xl" color={textColor} fontWeight="bold">
-                Culturals
-              </Text>
-            </CardHeader>
-            <CardBody>
-              <Table variant="simple" color={textColor}>
-                <Thead>
-                  <Tr my=".8rem" pl="0px" color="gray.400">
-                    <Th color="gray.400">Name Of The Event Participated</Th>
-                    <Th color="gray.400">Date and Year</Th>
-                    <Th color="gray.400">Position Secured</Th>
-                  </Tr>
-                </Thead>
-                <Tbody>
-                  {Culturals.map((row) => {
-                    return (
-                      <ExtraCurricualarTableRow
-                        row1={row.row1}
-                        row2={row.row2}
-                        row3={row.row3}
-                      />
-                    );
-                  })}
+                  {data.length > 0 ? (
+                    data.map((items) => (
+                      <Tr>
+                         <Th color="white.100">{items.name}</Th>
+                         <Th color="white.100">{items.register_no}</Th>
+                         <Th color="white.100">{items.roll_no}</Th>
+                         <Th color="white.100">{items.dept}</Th>
+                      </Tr>
+                    ))
+                  ) : (<></>) }
                 </Tbody>
               </Table>
             </CardBody>

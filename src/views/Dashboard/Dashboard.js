@@ -75,6 +75,10 @@ export default function Dashboard() {
         {ongo.length > 0 ? (
           ongo.map((items) => (
             <div style={{width:"25%",cursor:"pointer"}} onClick={()=>{
+              localStorage.setItem("dept",items.dept)
+              localStorage.setItem("year",items.year)
+              localStorage.setItem("sem",items.sem)
+              localStorage.setItem("code",items.code)
               history.push("/admin/ExtracurricularData")
             }}>
               <Card minH="100px">
