@@ -6,6 +6,7 @@ import {
   Grid,
   Icon,
   Image,
+  NumberInputStepper,
   Portal,
   Progress,
   SimpleGrid,
@@ -23,50 +24,42 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-// assets
-import peopleImage from "assets/img/people-image.png";
-import logoChakra from "assets/svg/logo-white.svg";
+
 // Custom components
 import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
-import CardHeader from "components/Card/CardHeader.js";
-import BarChart from "components/Charts/BarChart";
-import LineChart from "components/Charts/LineChart";
-import IconBox from "components/Icons/IconBox";
-// Custom icons
-import {
-  CartIcon,
-  DocumentIcon,
-  GlobeIcon,
-  RocketIcon,
-  StatsIcon,
-  WalletIcon,
-} from "components/Icons/Icons.js";
+import { useHistory } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
-import React, { useState } from "react";
-// react icons
-import { BsArrowRight } from "react-icons/bs";
-import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
-import { dashboardTableData, timelineData } from "variables/general";
+import axios from "axios";
 
 export default function Dashboard() {
   // Chakra Color Mode
-  const { colorMode, toggleColorMode } = useColorMode();
-  const iconorange = useColorModeValue("orange.300", "orange.300");
-  const iconBoxInside = useColorModeValue("white", "white");
   const textColor = useColorModeValue("gray.700", "white");
-  const [series, setSeries] = useState([
-    {
-      type: "area",
-      name: "Mobile apps",
-      data: [190, 220, 205, 350, 370, 450, 400, 360, 210, 250, 292, 150],
-    },
-    {
-      type: "area",
-      name: "Websites",
-      data: [400, 291, 121, 117, 25, 133, 121, 211, 147, 25, 201, 203],
-    },
-  ]);
+  const [ongo, setongo] = useState([])
+  const history = useHistory();
+
+  useEffect(async () => {
+    var email = localStorage.getItem("email")
+    var auth_token = localStorage.getItem("token")
+    var id  = localStorage.getItem("id")
+
+    axios.post("http://localhost:5000/courses", {
+      email,
+      auth_token,
+      courses : localStorage.getItem("courses"),
+      id 
+    }).then((items) => {
+      var today = new Date();
+      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      function filters(value) {
+        return time>=value.start_time && time<=value.end_time;
+      }
+      var new_arr = items.data.filter(filters)
+      setongo(new_arr);
+    });
+  }, []);
+
   const overlayRef = React.useRef();
 
   return (
@@ -79,75 +72,87 @@ export default function Dashboard() {
         fontSize="14px"
       >Ongoing Classes</Text>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} spacing="24px">
-          <div style={{width:"25%",cursor:"pointer"}}>
-          <Card minH="100px">
-          <CardBody>
-            {/* <Flex
-              flexDirection="column"
-              align="center"
-              justify="center"
-              w="100%"
-            > */}
-            <Text
-                mb="36px"
-                ms="4px"
-                color={textColor}
-                fontWeight="bold"
-                fontSize="14px"
-              >
-                Course Name
-              </Text>
-              {/* <Stat mr="auto">
-                <StatLabel
-                  fontSize="sm"
-                  color="gray.400"
-                  fontWeight="bold"
-                  pb="1.5rem"
+        {ongo.length > 0 ? (
+          ongo.map((items) => (
+            <div style={{width:"25%",cursor:"pointer"}} onClick={()=>{
+              history.push("/admin/ExtracurricularData")
+            }}>
+              <Card minH="100px">
+                <CardBody>
+                <Flex
+                  flexDirection="column"
+                  align="left"
+                  // justify="center"
+                  w="100%"
                 >
-                  Academic Results
-                </StatLabel>
-              </Stat>
-              <BarChart /> */}
-            {/* </Flex> */}
-          </CardBody>
-        </Card>
+                  <Text
+                      mb="5px"
+                      // ms="4px"
+                      color={textColor}
+                      fontWeight="bold"
+                      fontSize="14px"
+                    >
+                      {items.name} &nbsp;&nbsp;( {items.code} )
+                  </Text>
+                  <br/>
+                  <Text
+                      // ms="4px"
+                      color={textColor}
+                      fontWeight="bold"
+                      fontSize="14px"
+                    >
+                      {"Staff Name : "} &nbsp;&nbsp; {localStorage.getItem("name")} 
+                  </Text>
+                </Flex>
+              </CardBody>
+            </Card>
           </div>
-          
-          <Text
-                mb="36px"
-                ms="4px"
-                color={textColor}
-                fontWeight="bold"
-                fontSize="14px"
-              >
-                Upcoming Classes
-            </Text>      
-        
-        
-        {/* <Card minH="300px">
+        )) 
+        ) : (
+          <>
+          <marquee style={{color:"red"}}>No ongoing classes today</marquee>
+            {/* <Text
+            mb="36px"
+            ms="4px"
+            color={"red.500"}
+            fontWeight="bold"
+            fontSize="14px"
+            >
+            {"No ongoing classes today"}
+            </Text> */}
+          </>
+        )}
+
+      <div style={{width:"25%"}}>  
+      <Text
+        mb="15px"
+        ms="4px"
+        color={textColor}
+        fontWeight="bold"
+        fontSize="14px"
+      >Upcoming Classes</Text>
+        <marquee style={{color:"red"}}>No upcoming classes today</marquee>
+        {/* <Card minH="100px">
           <CardBody>
             <Flex
               flexDirection="column"
-              align="center"
-              justify="center"
+              align="left"
+              // justify="center"
               w="100%"
             >
-              <Stat mr="auto">
-                <StatLabel
-                  fontSize="sm"
-                  color="gray.400"
-                  fontWeight="bold"
-                  pb=".1rem"
-                >
-                  Fee Statistics
-                </StatLabel>
-              </Stat>
-              <Box w="100%" h={{ sm: "250px" }} ps="8px">
-                <LineChart />
-              </Box>
+              <Text
+                // mb="36px"
+                // ms="4px"
+                color={textColor}
+                fontWeight="bold"
+                fontSize="14px"
+              >
+                {"names"}
+              </Text>
             </Flex>
           </CardBody>
         </Card> */}
+      </div>
 
         {/* <Card minH="300px">
           <CardBody>

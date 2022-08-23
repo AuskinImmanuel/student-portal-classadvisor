@@ -48,12 +48,14 @@ function SignIn() {
           email,
           password, 
         })
+        console.log(res.data);
         localStorage.setItem("token", res.data.auth_token);
         localStorage.setItem("email", res.data.email);
         localStorage.setItem("name", res.data.name);
+        localStorage.setItem("id", res.data.id);
+        localStorage.setItem("courses", res.data.courses);
         history.push("/admin/dashboard")
       } catch (err) {
-          console.log(err);
           if (res == null && err.response == undefined) {
             document.getElementById("result").innerHTML = "Server Down";
           }

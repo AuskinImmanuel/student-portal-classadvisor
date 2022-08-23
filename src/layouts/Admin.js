@@ -7,7 +7,7 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 import React, { useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import routes from "routes.js";
-// import routes1 from "routes1.js";
+import routes1 from "routes1.js";
 // Custom Chakra theme
 import theme from "theme/theme.js";
 
@@ -27,7 +27,7 @@ export default function Dashboard(props) {
     return window.location.pathname !== "/admin/full-screen-maps";
   };
   const getActiveRoute = (routes) => {
-    let activeRoute = "Default Brand Text";
+    let activeRoute = "Mark Attendance";
     for (let i = 0; i < routes.length; i++) {
       if (routes[i].collapse) {
         let collapseActiveRoute = getActiveRoute(routes[i].views);
@@ -50,30 +50,30 @@ export default function Dashboard(props) {
     return activeRoute;
   };
 
-  // const getActiveRoute1 = (routes1) => {
-  //   let activeRoute1 = "Default Brand Text";
-  //   for (let i = 0; i < routes1.length; i++) {
-  //     if (routes1[i].collapse) {
-  //       let collapseActiveRoute1 = getActiveRoute1(routes1[i].views);
-  //       if (collapseActiveRoute1 !== activeRoute1) {
-  //         return collapseActiveRoute1;
-  //       }
-  //     } else if (routes1[i].category) {
-  //       let categoryActiveRoute1 = getActiveRoute1(routes1[i].views);
-  //       if (categoryActiveRoute1 !== activeRoute1) {
-  //         return categoryActiveRoute1;
-  //       }
-  //     } else {
-  //       if (
-  //         window.location.href.indexOf(routes1[i].layout + routes1[i].path) !==
-  //         -1
-  //       ) {
-  //         return routes1[i].name;
-  //       }
-  //     }
-  //   }
-  //   return activeRoute1;
-  // };
+  const getActiveRoute1 = (routes1) => {
+    let activeRoute1 = "Mark Attendance";
+    for (let i = 0; i < routes1.length; i++) {
+      if (routes1[i].collapse) {
+        let collapseActiveRoute1 = getActiveRoute1(routes1[i].views);
+        if (collapseActiveRoute1 !== activeRoute1) {
+          return collapseActiveRoute1;
+        }
+      } else if (routes1[i].category) {
+        let categoryActiveRoute1 = getActiveRoute1(routes1[i].views);
+        if (categoryActiveRoute1 !== activeRoute1) {
+          return categoryActiveRoute1;
+        }
+      } else {
+        if (
+          window.location.href.indexOf(routes1[i].layout + routes1[i].path) !==
+          -1
+        ) {
+          return routes1[i].name;
+        }
+      }
+    }
+    return activeRoute1;
+  };
   // This changes navbar state(fixed or not)
   const getActiveNavbar = (routes) => {
     let activeNavbar = false;
@@ -96,27 +96,27 @@ export default function Dashboard(props) {
     return activeNavbar;
   };
 
-  // const getActiveNavbar1 = (routes1) => {
-  //   let activeNavbar1 = false;
-  //   for (let i = 0; i < routes1.length; i++) {
-  //     if (routes1[i].category) {
-  //       let categoryActiveNavbar1 = getActiveNavbar1(routes1[i].views);
-  //       if (categoryActiveNavbar1 !== activeNavbar1) {
-  //         return categoryActiveNavbar1;
-  //       }
-  //     } else {
-  //       if (
-  //         window.location.href.indexOf(routes1[i].layout + routes1[i].path) !==
-  //         -1
-  //       ) {
-  //         if (routes1[i].secondaryNavbar) {
-  //           return routes1[i].secondaryNavbar;
-  //         }
-  //       }
-  //     }
-  //   }
-  //   return activeNavbar1;
-  // };
+  const getActiveNavbar1 = (routes1) => {
+    let activeNavbar1 = false;
+    for (let i = 0; i < routes1.length; i++) {
+      if (routes1[i].category) {
+        let categoryActiveNavbar1 = getActiveNavbar1(routes1[i].views);
+        if (categoryActiveNavbar1 !== activeNavbar1) {
+          return categoryActiveNavbar1;
+        }
+      } else {
+        if (
+          window.location.href.indexOf(routes1[i].layout + routes1[i].path) !==
+          -1
+        ) {
+          if (routes1[i].secondaryNavbar) {
+            return routes1[i].secondaryNavbar;
+          }
+        }
+      }
+    }
+    return activeNavbar1;
+  };
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
       if (prop.collapse) {
@@ -139,27 +139,27 @@ export default function Dashboard(props) {
     });
   };
 
-  // const getRoutes1 = (routes1) => {
-  //   return routes1.map((prop, key) => {
-  //     if (prop.collapse) {
-  //       return getRoutes1(prop.views);
-  //     }
-  //     if (prop.category === "account") {
-  //       return getRoutes1(prop.views);
-  //     }
-  //     if (prop.layout === "/admin") {
-  //       return (
-  //         <Route
-  //           path={prop.layout + prop.path}
-  //           component={prop.component}
-  //           key={key}
-  //         />
-  //       );
-  //     } else {
-  //       return null;
-  //     }
-  //   });
-  // };
+  const getRoutes1 = (routes1) => {
+    return routes1.map((prop, key) => {
+      if (prop.collapse) {
+        return getRoutes1(prop.views);
+      }
+      if (prop.category === "account") {
+        return getRoutes1(prop.views);
+      }
+      if (prop.layout === "/admin") {
+        return (
+          <Route
+            path={prop.layout + prop.path}
+            component={prop.component}
+            key={key}
+          />
+        );
+      } else {
+        return null;
+      }
+    });
+  };
   const { isOpen, onOpen, onClose } = useDisclosure();
   // Chakra Color Mode
   return (
@@ -194,7 +194,7 @@ export default function Dashboard(props) {
             <PanelContainer>
               <Switch>
                 {getRoutes(routes)}
-                {/* {getRoutes1(routes1)} */}
+                {getRoutes1(routes1)}
                 <Redirect from="/admin" to="/admin/dashboard" />
               </Switch>
             </PanelContainer>
