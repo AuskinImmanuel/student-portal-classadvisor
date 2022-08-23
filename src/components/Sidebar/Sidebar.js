@@ -1,6 +1,8 @@
 /*eslint-disable*/
 import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
 // chakra imports
+import Logo from "../../assets/img/signInImage.png";
+
 import {
   Box,
   Button,
@@ -228,8 +230,9 @@ function Sidebar(props) {
         alignItems="center"
         fontSize="11px"
       >
-        <CreativeTimLogo w="32px" h="32px" me="10px" />
-        <Text fontSize="sm" mt="3px">
+        {/* <CreativeTimLogo w="32px" h="32px" me="10px" /> */}
+        <img src={Logo} alt="licet logo" style={{width:"32px",height:"32px"}}></img>
+        &nbsp;&nbsp;&nbsp;<Text fontSize="sm" mt="3px">
           {logoText}
         </Text>
       </Link>
