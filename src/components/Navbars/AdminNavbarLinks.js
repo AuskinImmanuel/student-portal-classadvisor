@@ -54,7 +54,7 @@ export default function HeaderLinks(props) {
   const settingsRef = React.useRef();
   return (
     <Flex
-      pe={{ sm: "0px", md: "16px" }}
+      pe={{ sm: "0px", md: "1px" }}
       w={{ sm: "100%", md: "auto" }}
       alignItems="center"
     >
@@ -82,14 +82,14 @@ export default function HeaderLinks(props) {
       <SettingsIcon
         cursor="pointer"
         ms={{ base: "16px", xl: "0px" }}
-        me="16px"
+        me="1px"
         ref={settingsRef}
         onClick={props.onOpen}
         color={navbarIcon}
         w="18px"
         h="18px"
       />
-      <Menu>
+      {/* <Menu>
         <MenuButton>
           <BellIcon color={navbarIcon} w="18px" h="18px" />
         </MenuButton>
@@ -124,7 +124,7 @@ export default function HeaderLinks(props) {
             </MenuItem>
           </Flex>
         </MenuList>
-      </Menu>
+      </Menu> */}
     </Flex>
   );
 }

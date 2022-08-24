@@ -24,18 +24,33 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import ExtraCurricualarTableRow from "components/Tables/ProfessionalDevelopmentTablerow";
-import { Clubs } from "variables/general";
+import { useToast } from '@chakra-ui/react'
 import { Checkbox, CheckboxGroup } from '@chakra-ui/react'
 
 function ExtraCurricularData() {
+  const toast = useToast()
+  const toastIdRef = React.useRef()
+
   function submit() {
     var email = localStorage.getItem("email")
     var auth_token = localStorage.getItem("token")
+    var code = localStorage.getItem("code")
     var data = JSON.stringify([present])
+    var dept = localStorage.getItem("dept")
+    var year = localStorage.getItem("year")
+    var sem = localStorage.getItem("sem")
     axios.post("http://localhost:5000/attendance", {
       email,
       auth_token,
-      data
+      data,
+      dept,
+      year,
+      sem,
+      code
+    }).then((results)=>{
+      toastIdRef.current = toast({ description: results.data, status: 'success',isClosable: true })
+    }).catch((err)=>{
+      toastIdRef.current = toast({ description: err.response.data, status: 'error',isClosable: true })
     })
   }
 

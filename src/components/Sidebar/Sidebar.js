@@ -220,7 +220,7 @@ function Sidebar(props) {
   var brand = (
     <Box pt={"25px"} mb="12px">
       <Link
-        href={`${process.env.PUBLIC_URL}/#/`}
+        // href={`${process.env.PUBLIC_URL}/#/`}
         target="_blank"
         display="flex"
         lineHeight="100%"
@@ -229,6 +229,7 @@ function Sidebar(props) {
         justifyContent="center"
         alignItems="center"
         fontSize="11px"
+        style={{cursor:"default"}}
       >
         {/* <CreativeTimLogo w="32px" h="32px" me="10px" /> */}
         <img src={Logo} alt="licet logo" style={{width:"32px",height:"32px"}}></img>
