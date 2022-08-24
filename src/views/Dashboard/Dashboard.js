@@ -82,7 +82,7 @@ export default function Dashboard() {
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} spacing="24px">
         {ongo.length > 0 ? (
           ongo.map((items) => (
-            <div style={{width:"25%",cursor:"pointer"}} onClick={()=>{
+            <div style={{width:"100%",cursor:"pointer"}} onClick={()=>{
               localStorage.setItem("dept",items.dept)
               localStorage.setItem("year",items.year)
               localStorage.setItem("sem",items.sem)
