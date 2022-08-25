@@ -39,6 +39,7 @@ export default function Dashboard() {
   const textColor = useColorModeValue("gray.700", "white");
   const [ongo, setongo] = useState([])
   const [upco, setupco] = useState([])
+  const [refresh, setrefresh] = useState([])
 
   const history = useHistory();
 
@@ -47,25 +48,66 @@ export default function Dashboard() {
     var auth_token = localStorage.getItem("token")
     var id  = localStorage.getItem("id")
 
-    axios.post("http://localhost:5000/courses", {
+    function refreshpage() {
+      var today = new Date();
+      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      var current = time.split(':',2).join(".")
+      if(refresh.length > 0){
+        for (let i = 0; i < refresh.length; i++) {
+          if (refresh[i]==current) {
+            fetchdata()
+          }
+        }
+      }
+    }
+
+    setInterval(()=>{
+      refreshpage()
+    },1000)
+
+    let fetchdata = () =>{
+      axios.post("http://localhost:5000/courses", {
       email,
       auth_token,
       courses : localStorage.getItem("courses"),
       id 
-    }).then((items) => {
-      var today = new Date();
-      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-      function filters(value) {
-        return time>=value.start_time && time<=value.end_time;
-      }
-      function filterz(value) {
-        return time<=value.start_time;
-      }
-      var new_arr = items.data.filter(filters)
-      setongo(new_arr);
-      var new_arrs = items.data.filter(filterz)
-      setupco(new_arrs);
-    });
+      }).then((items) => {
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        function filters(value) {
+          var current = time.split(':',2)
+          var st = "0"
+          if(current[1]<10){
+            current[1] = st+current[1]
+          }
+          current = current.join('.')
+          var start = (value.start_time).split(':',2).join(".") 
+          var end = (value.end_time).split(':',2).join(".") 
+          if(parseFloat(current) >= parseFloat(start) && parseFloat(current) <parseFloat(end)){
+            refresh.push(end)
+            return value;
+          }
+        }
+        function filterz(value) {
+          var current = time.split(':',2)
+          var st = "0"
+          if(current[1]<10){
+            current[1] = st+current[1]
+          }
+          current = current.join('.')
+          var start = (value.start_time).split(':',2).join(".")
+          if(parseFloat(current)<parseFloat(start)){
+            refresh.push(start)
+            return value
+          }
+        }
+        var new_arr = items.data.filter(filters)
+        setongo(new_arr);
+        var new_arrs = items.data.filter(filterz)
+        setupco(new_arrs);
+      });
+    }
+    fetchdata()
   }, []);
 
   const overlayRef = React.useRef();
