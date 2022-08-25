@@ -51,7 +51,12 @@ export default function Dashboard() {
     function refreshpage() {
       var today = new Date();
       var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-      var current = time.split(':',2).join(".")
+      var current = time.split(':',2)
+      var st = "0"
+        if(current[1]<10){
+          current[1] = st+current[1]
+        }
+      current = current.join('.')
       if(refresh.length > 0){
         for (let i = 0; i < refresh.length; i++) {
           if (refresh[i]==current) {
@@ -63,7 +68,7 @@ export default function Dashboard() {
 
     setInterval(()=>{
       refreshpage()
-    },1000)
+    },5000)
 
     let fetchdata = () =>{
       axios.post("http://localhost:5000/courses", {
