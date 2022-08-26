@@ -26,9 +26,6 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import StudentListInternational from "components/Tables/StudentListInternational";
-import { tablesTableData4 } from "variables/general";
-import Selection from "components/Select/Selection";
-import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
 
 function InternationalExposure() {
   const [data, setData] = useState([]);
