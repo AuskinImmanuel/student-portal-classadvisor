@@ -1,10 +1,11 @@
 import SignIn from "views/Pages/SignIn.js";
-import GeneralInformationdata from "views/Pages/GeneralInformationdata";
+import ExtraCurricularData from "views/Pages/ExtraCurricularData";
+
 
 var NdashRoutes = [
   {
-    path: "/GeneralInformationdata",
-    component: GeneralInformationdata,
+    path: "/ExtracurricularData",
+    component: ExtraCurricularData,
     layout: "/admin",
   },
   {

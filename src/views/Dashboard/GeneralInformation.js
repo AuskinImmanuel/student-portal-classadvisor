@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 // Chakra imports
@@ -11,20 +11,16 @@ import {
   Thead,
   Tr,
   useColorModeValue,
-  IconButton,
   Button,
   Input,
   InputGroup,
   SimpleGrid,
   Box,
-  InputLeftElement,
 } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
 // Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import StudentListGeneral from "components/Tables/StudentListGeneral";
 import { Select } from '@chakra-ui/react'
 import { useToast } from '@chakra-ui/react'
 

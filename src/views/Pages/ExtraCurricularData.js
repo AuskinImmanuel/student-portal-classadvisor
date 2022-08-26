@@ -10,12 +10,7 @@ import {
   Thead,
   Tr,
   useColorModeValue,
-  FormControl,
   Button,
-  FormErrorMessage,
-  FormHelperText,
-  Select,
-  SimpleGrid,
   Grid,
   GridItem,
 } from "@chakra-ui/react";
@@ -23,9 +18,8 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import ExtraCurricualarTableRow from "components/Tables/ProfessionalDevelopmentTablerow";
 import { useToast } from '@chakra-ui/react'
-import { Checkbox, CheckboxGroup } from '@chakra-ui/react'
+import { Checkbox } from '@chakra-ui/react'
 
 function ExtraCurricularData() {
   const toast = useToast()
