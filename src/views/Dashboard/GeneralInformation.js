@@ -16,6 +16,7 @@ import {
   InputGroup,
   SimpleGrid,
   Box,
+  Spinner
 } from "@chakra-ui/react";
 
 // Custom components
@@ -334,7 +335,6 @@ function GeneralInformation() {
       )}
       </>
     )}  
-      
     </Flex>
   );
 }

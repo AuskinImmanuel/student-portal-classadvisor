@@ -21,7 +21,7 @@ import {
   Th,
   Thead,
   Tr,
-  useColorMode,
+  Spinner,
   useColorModeValue,
 } from "@chakra-ui/react";
 
@@ -218,7 +218,7 @@ export default function Dashboard() {
             <>
               <marquee style={{color:"red"}}>No upcoming classes today</marquee>
             </>
-        )} 
+        )}
       </SimpleGrid>
     </Flex>
   );

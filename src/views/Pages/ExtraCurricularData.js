@@ -13,6 +13,8 @@ import {
   Button,
   Grid,
   GridItem,
+  Spinner,
+  BeatLoader
 } from "@chakra-ui/react";
 // Custom components
 import Card from "components/Card/Card.js";
@@ -26,6 +28,7 @@ function ExtraCurricularData() {
   const toastIdRef = React.useRef()
 
   function submit() {
+    setload(true)
     var email = localStorage.getItem("email")
     var auth_token = localStorage.getItem("token")
     var code = localStorage.getItem("code")
@@ -43,13 +46,16 @@ function ExtraCurricularData() {
       code
     }).then((results)=>{
       toastIdRef.current = toast({ description: results.data, status: 'success',isClosable: true })
+      setload(false)
     }).catch((err)=>{
       toastIdRef.current = toast({ description: err.response.data, status: 'error',isClosable: true })
+      setload(false)
     })
   }
 
   const [data, setdata] = useState([])
   const [present, setpresent] = useState({})
+  const [load, setload] = useState(false)
 
   useEffect(async () => {
     var email = localStorage.getItem("email")
@@ -75,6 +81,7 @@ function ExtraCurricularData() {
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
+    <>
     <Flex direction="column" pt={{ base: "400px", md: "75px" }}>
       <Grid columns={{ sm: 1, md: 2, xl: 2 }} gap={4}>
         <GridItem>
@@ -126,11 +133,13 @@ function ExtraCurricularData() {
           variant="solid"
           width="10%"
           onClick={()=>{submit()}}
+          isLoading = {load}
         >
           Submit
         </Button>
       </Grid>
     </Flex>
+  </>
   );
 }
 
