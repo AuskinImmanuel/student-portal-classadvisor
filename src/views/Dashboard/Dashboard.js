@@ -68,7 +68,7 @@ export default function Dashboard() {
 
     setInterval(()=>{
       refreshpage()
-    },5000)
+    },1000)
 
     let fetchdata = () =>{
       axios.post("http://localhost:5000/courses", {
@@ -119,6 +119,13 @@ export default function Dashboard() {
 
   return (
     <Flex flexDirection="column" pt={{ base: "500px", md: "75px" }}>
+      <Text
+        mb="15px"
+        ms="4px"
+        color={textColor}
+        fontWeight="bold"
+        fontSize="14px"
+      >Logged in as : {localStorage.getItem("name")}</Text> 
      <Text
         mb="15px"
         ms="4px"

@@ -90,8 +90,8 @@ function GeneralInformation() {
         else{
           var set = results.data[0]
           set = JSON.parse(set[course])
-          setData(set)
-          console.log(set);
+          setData(set[0])
+          console.log(set[0]);
           isload(false)
         }
       }).catch(()=>{

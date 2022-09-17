@@ -13,8 +13,9 @@ import {
   Button,
   Grid,
   GridItem,
-  Spinner,
-  BeatLoader
+  RadioGroup,
+  Stack,
+  Radio,
 } from "@chakra-ui/react";
 // Custom components
 import Card from "components/Card/Card.js";
@@ -72,7 +73,7 @@ function ExtraCurricularData() {
       sem
     }).then((items) => {
       for (let i = 0; i < items.data.length; i++) {
-        present[items.data[i].register_no] = 0        
+        present[items.data[i].register_no] = 1        
       }
       setdata(items.data);
     });
@@ -99,7 +100,7 @@ function ExtraCurricularData() {
                     <Th color="gray.400">Register No</Th>
                     <Th color="gray.400">Roll No</Th>
                     <Th color="gray.400">Departemnt</Th>
-                    <Th color="gray.400">Present/Absent</Th>
+                    <Th color="gray.400"> Present/Absent </Th>
                   </Tr>
                 </Thead>
                 <Tbody>
@@ -110,14 +111,26 @@ function ExtraCurricularData() {
                          <Th color="white.100">{items.register_no}</Th>
                          <Th color="white.100">{items.roll_no}</Th>
                          <Th color="white.100">{items.dept}</Th>
-                         <Th><Checkbox onChange={(e)=>{
+                         <Th style={{textTransform:"none"}}><RadioGroup defaultValue='1' onChange={(e)=>{
+                          present[items.register_no] = e;
+                         }}>
+                          <Stack spacing={5} direction='row'>
+                            <Radio colorScheme='blue' value='1'>
+                              Present
+                            </Radio>
+                            <Radio colorScheme='orange' value='0'>
+                              Absent
+                            </Radio>
+                          </Stack>
+                        </RadioGroup></Th>
+                         {/* <Th><Checkbox defaultChecked={true} onChange={(e)=>{
                           if(e.target.checked === true) {
                             present[items.register_no] = 1
                           }
                           if(e.target.checked === false) {
                             present[items.register_no] = 0
                           }
-                         }}></Checkbox></Th>
+                         }}></Checkbox></Th> */}
                       </Tr>
                     ))
                   ) : (<></>) }
